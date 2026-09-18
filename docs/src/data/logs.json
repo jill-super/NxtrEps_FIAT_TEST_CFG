@@ -1,0 +1,85 @@
+[
+  {
+    "file": "Canoe Config/DumpStartWrite.log",
+    "size": 74,
+    "lines": 1,
+    "head": [
+      "2015-03-19  11:45:48  Vector ASAP2 Viewer Version 12.0.40.50928 11.2.2014"
+    ]
+  },
+  {
+    "file": "Canoe Config/FaultHistory.log",
+    "size": 74,
+    "lines": 1,
+    "head": [
+      "2015-03-19  11:45:48  Vector ASAP2 Viewer Version 12.0.40.50928 11.2.2014"
+    ]
+  },
+  {
+    "file": "Canoe Config/traceLog.txt",
+    "size": 0,
+    "lines": 0,
+    "head": []
+  },
+  {
+    "file": "Capl/traceLog.txt",
+    "size": 15845,
+    "lines": 307,
+    "head": [
+      "[15:41:55] - Tx\t22 0A DA 0A D9 F1 86 19 21 20 10 20 14 F1 0D F1 54 F1 55 F1 93 F1 95",
+      "[15:41:55]\tNexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1",
+      "[15:41:55]\tNegative response:",
+      "    Response Code\t    Incorrect message length or invalid format",
+      "[15:41:55]\tDevice 'Nexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1' is online.",
+      "[15:42:09] - Tx\t22 0A DA 0A D9 F1 86 19 21 20 10 20 14 F1 0D F1 54 F1 55 F1 93",
+      "[15:42:09]\tNexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1",
+      "[15:42:09]\tError when processing of response message ('Primitive has invalid length')!",
+      "[15:42:09] - Rx\tPositive response:",
+      "[15:42:09] - Rx\t 62 0A DA 08 0A D9 03 F1",
+      "[15:42:09] - Rx\t 86 01 19 21 00 00 00 00",
+      "[15:42:09] - Rx\t 00 00 00 00 00 20 10 F9",
+      "[15:42:09] - Rx\t 20 14 00 F1 0D 82 81 81",
+      "[15:42:09] - Rx\t 81 F1 54 00 D2 F1 55 00",
+      "[15:42:09] - Rx\t D2 F1 93 33",
+      "    System status\t    0x08",
+      "        Status_1\t    0x08",
+      "            Status_1.Dynamic Steering Torque (DST) Status\t    NOT requested",
+      "            Status_1.Dynamic Steering Torque (DST) Vehicle Operative Conditions\t    Not passed",
+      "            Status_1.EPS DST Internal Operative Conditions\t    Not passed",
+      "            Status_1.Angle Sensor Type\t    Absolute sensor",
+      "            Status_1.Motor Type\t    Small",
+      "            Status_1.Lamp Command\t    OFF",
+      "            Status_1.(gap)\t    (0x00)",
+      "[15:42:21] - Tx\t22 0A DA 0A D9 F1 86 19 21 20 10 20 14 F1 0D F1 54 F1 55",
+      "[15:42:21]\tNexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1",
+      "[15:42:21]\tError when processing of response message ('Primitive has invalid length')!",
+      "[15:42:21] - Rx\tPositive response:",
+      "[15:42:21] - Rx\t 62 0A DA 08 0A D9 03 F1",
+      "[15:42:21] - Rx\t 86 01 19 21 00 00 00 00",
+      "[15:42:21] - Rx\t 00 00 00 00 00 20 10 F9",
+      "[15:42:21] - Rx\t 20 14 00 F1 0D 82 81 81",
+      "[15:42:21] - Rx\t 81 F1 54 00 D2 F1 55 00",
+      "[15:42:21] - Rx\t D2",
+      "    System status\t    0x08",
+      "        Status_1\t    0x08",
+      "            Status_1.Dynamic Steering Torque (DST) Status\t    NOT requested",
+      "            Status_1.Dynamic Steering Torque (DST) Vehicle Operative Conditions\t    Not passed",
+      "            Status_1.EPS DST Internal Operative Conditions\t    Not passed",
+      "            Status_1.Angle Sensor Type\t    Absolute sensor"
+    ]
+  },
+  {
+    "file": "Canoe Config/CANapeFault.dmp",
+    "size": 78893,
+    "magic": "MDMP",
+    "hexHead": "4d 44 4d 50 93 a7 b1 61 09 00 00 00 20 00 00 00 00 00 00 00 2d ef 0a 55 00 00 00 00 00 00 00 00 03 00 00 00 44 02 00 00 54 02 00 00 04 00 00 00 78 2b 00 00 a4 0",
+    "note": "Binary file — open in Vector CANoe/CANape; documented, not rendered inline."
+  },
+  {
+    "file": "Canoe Config/Trace.blf",
+    "size": 2909026,
+    "magic": "LOGG",
+    "hexHead": "4c 4f 47 47 90 00 00 00 05 00 00 00 02 06 08 02 62 63 2c 00 00 00 00 00 20 e2 33 01 00 00 00 00 00 6a 06 00 69 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0",
+    "note": "Binary file — open in Vector CANoe/CANape; documented, not rendered inline."
+  }
+]

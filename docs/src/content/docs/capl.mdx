@@ -1,0 +1,90 @@
+---
+title: CAPL — Simulation & test nodes
+description: What each .can source and .cbf binary does — handlers, variables, full source.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import capl from '../../data/capl.json';
+
+CAPL nodes are the bench's behavior: ECU stubs, CRC/counter injection, VT stimulus, message-rate checks and XCP tests. **`.can` = human-readable source, `.cbf` = compiled binary** produced by the CANoe CAPL compiler (magic `CAPL`, not readable — always read the same-named `.can`).
+
+## Node overview
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>File</th><th>Lines</th><th>Handlers</th><th>Role</th></tr></thead>
+<tbody>
+{capl.filter((f) => f.source || f.binary).filter((f) => f.file.endsWith('.can') || f.file.endsWith('.cbf') || f.file.endsWith('.CAN')).map((f) => (
+  <tr><td><code>{f.file}</code></td><td>{f.binary ? 'binary' : f.lines}</td><td>{f.handlerCount ?? '—'}</td><td>{f.binary ? 'Compiled — see matching .can' : ''}</td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+| File | What it is |
+| ---- | ---------- |
+| `BCM.can` | BCM stub: `ILActivateClamp15()` on start; sysvar toggles disable/enable `BCM_COMMAND` and `STATUS_C_BCM2` |
+| `BCM2.cbf` | Compiled only (no `.can` source in repo) — legacy/extra BCM branch |
+| `BSM.can` | BSM stub with live **CRC-8 (poly 0x1D, init 0xFF) + message-counter** injection on `BSM1`; honors `MESSAGES::CRC_BSMOff` / `MessageCounter_BSMOff` sysvars |
+| `ECM.can` | ECM stub: toggles disable/enable `MOT1` and `MOT3` via sysvars |
+| `IPC.can` | IPC stub: toggle for `STATUS_C_IPC` |
+| `Init VT7001.can` | **VT7001 bench init**: torque + position ramp simulation, NCS offsets, PWM duty outputs; executed by `Test_FIASA.tse` (last run: pass, 2016-03-21) |
+| `EPS_VT_SIM_001.CAN` | Larger EPS/stimulus simulation (1,235 lines): handwheel torque & position loops, timers, VT analog outputs |
+| `MessageAnalysis.can` | Generic **message-rate analyzer** (917 lines): samples any CAN ID, reports current/average/min/max rate + timeout handling |
+| `XCPTest_Fiasa.CAN` | **XCP + DLC test suite** (1,711 lines): tester-present, DLC-length checks per ID, DTC read (`0x18DA30F1`), message-rate helpers |
+| `UC_FREIN.can` | Brake (`IS_DYN_ABR_38D` / `0x38D`) checksum/counter helper (`applILTxPending`) |
+
+## Handler index (all `.can` sources)
+
+<TableFilter inputId="capl-search" tableId="capl-table" countId="capl-count" placeholder="Filter handlers — try sysvar, message, testcase, BSM1…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="capl-table">
+<thead><tr><th>File</th><th>Kind</th><th>Line</th><th>Code</th></tr></thead>
+<tbody>
+{capl.filter((f) => f.source).flatMap((f) => (f.handlers || []).map((h) => (
+  <tr>
+    <td><code class="inline-id">{f.file}</code></td>
+    <td>{h.kind}</td>
+    <td>{h.line}</td>
+    <td><code>{h.code}</code></td>
+  </tr>
+)))}
+</tbody>
+</table>
+</div>
+
+## Source browser
+
+Each source is stored in full in `docs/src/data/capl.json` and rendered below — use the handler index above to jump, or `Ctrl+F` inside a block.
+
+{capl.filter((f) => f.source).map((f) => (
+  <details>
+    <summary><strong><code>{f.file}</code></strong> — {f.lines} lines, {(f.handlers || []).length} handlers{f.includes && f.includes.length ? `, includes: ${f.includes.join(', ')}` : ''}</summary>
+    {(f.variablesExcerpt || '').trim() && (
+      <div>
+        <p><em>Variables excerpt:</em></p>
+        <pre><code>{f.variablesExcerpt.trim().slice(0, 1200)}</code></pre>
+      </div>
+    )}
+    <pre style="max-height:480px;overflow:auto"><code>{f.source}</code></pre>
+  </details>
+))}
+
+## Compiled binaries (`.cbf`)
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>File</th><th>Size</th><th>Meaning</th></tr></thead>
+<tbody>
+{capl.filter((f) => f.binary).map((f) => (
+  <tr><td><code>{f.file}</code></td><td>{f.size.toLocaleString('en-US')} B</td><td>Compiled CAPL branch (`{f.magic}` magic). Load via the Simulation Setup entry that also names the `.can` source; recompile from source after edits.</td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+## Reports & logs in `Capl/`
+
+- **`Init VT7001_report.xml` / `.html`** — JUnit-style result of the `Init VT7001` test module (2 verdicts, `pass`, CANoe.LIN.XCP 8.5.98, engineer `PZ00M4`). See [Test execution](./test-execution/).
+- **`traceLog.txt`** (307 lines) — diagnostic trace against the Nexteer EPS (DID reads, NRCs, XCP-ish flows). See [Traces & logs](./traces-logs/).

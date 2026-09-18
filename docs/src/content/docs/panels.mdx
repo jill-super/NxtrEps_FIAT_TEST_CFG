@@ -1,0 +1,82 @@
+---
+title: Panels (.xvp)
+description: The four CANoe operator panels — controls and signal/sysvar bindings.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import panels from '../../data/panels.json';
+
+Panels are the operator UI: buttons, switches, numeric inputs and displays bound to CAN signals or system variables. CANoe 8.5.98 format (`Vector.CANalyzer.Panels.*`, v8.5.98 — except `Panel1.xvp` on v8.2.98).
+
+## Panel overview
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>Panel</th><th>Size</th><th>Controls</th><th>Bindings</th><th>Role</th></tr></thead>
+<tbody>
+{panels.map((p) => (
+  <tr>
+    <td><code>{p.file}</code></td>
+    <td>{(p.size / 1024).toFixed(1)} KB</td>
+    <td>{p.controlCount}</td>
+    <td>{p.symbolCount}</td>
+    <td>{p.file.includes('Fiasa326') ? 'Main EPS panel' : p.file.includes('trial') ? 'NTC / link-test panel' : p.file.includes('Old') ? 'Legacy XCP panel' : 'Minimal BCM_COMMAND demo'}</td>
+  </tr>
+))}
+</tbody>
+</table>
+</div>
+
+## `Fiasa326.xvp` — main panel (46 controls)
+
+Control types: TextBox, StaticText, Button, CheckBox, ComboBox, LCD, LED, Switch, GroupBox, Start/Stop. Key bindings (`MESSAGES::*` sysvars):
+
+- `pnlBCM_COMMAND_disable`, `pnlBSM1_disable`, `pnlMOT1_disable`, `pnlMOT3_disable`
+- `CRC_BSMOff`, `MessageCounter_BSMOff` (fault injection for the BSM CRC/counter logic)
+
+These drive the `on sysvar` handlers in `BCM.can` / `BSM.can` / `ECM.can` — toggling a checkbox enables/disables the corresponding IL message. See [System variables](./system-variables/) and [CAPL](./capl/).
+
+## `trialpanel.xvp` — link/NTC test panel (83 controls)
+
+The largest panel (82 KB, 83 controls, 74 bindings): `TrackBar`, `NumericUpDown`, LCDs plus start/stop controls. Bindings include:
+
+- `LinkTestVariables::IgnitionCycle_TestCycleNumber`, `IgnCycle::VariableTime`
+- `ReadNTCPanel::ClearNTCs`, `ReadNTCPanel::Message131/17D/3E9…` (NTC read/clear flows)
+
+## `FiasaOld.xvp` — legacy XCP panel (24 controls)
+
+Binds to XCP mirror sysvars (`XCP::SCIR::…`: `AbsHwPos_HwPosState`, `CmdIgnSts`, `EngSts`, `OpModeSts`, `Rte_AbsHwPos_HandwheelPosition_HwDeg_f32`) plus `VTS::Ignition::Active`. Superseded by `Fiasa326.xvp` for daily use.
+
+## `Panel1.xvp` — minimal demo (3 controls)
+
+A single Input/Output Box bound directly to the bus signal `CCAN;BCM;BCM_COMMAND;OperationalModeSts` (symbolic binding, not via sysvar). Useful as the smallest example of a signal-bound control.
+
+## Searchable binding list
+
+<TableFilter inputId="panel-search" tableId="panel-table" countId="panel-count" placeholder="Filter bindings — try MESSAGES, NTC, XCP, Ignition…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="panel-table">
+<thead><tr><th>Panel</th><th>Binding</th></tr></thead>
+<tbody>
+{panels.flatMap((p) => p.symbols.map((s) => (
+  <tr><td><code>{p.file}</code></td><td><code class="inline-id">{s}</code></td></tr>
+)))}
+</tbody>
+</table>
+</div>
+
+## Control-type breakdown
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>Panel</th><th>Control type</th><th>Count</th></tr></thead>
+<tbody>
+{panels.flatMap((p) => p.controlTypes.map((t) => (
+  <tr><td><code>{p.file}</code></td><td>{t.type}</td><td>{t.count}</td></tr>
+)))}
+</tbody>
+</table>
+</div>
+
+Full control names and bindings: `docs/src/data/panels.json`.

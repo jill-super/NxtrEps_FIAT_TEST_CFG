@@ -1,0 +1,456 @@
+[
+  {
+    "file": "Fiasa326.xvp",
+    "size": 35289,
+    "controlCount": 46,
+    "controlTypes": [
+      {
+        "type": "CheckBoxControl",
+        "count": 8
+      },
+      {
+        "type": "TextBoxControl",
+        "count": 7
+      },
+      {
+        "type": "ComboBoxControl",
+        "count": 7
+      },
+      {
+        "type": "StaticTextControl",
+        "count": 5
+      },
+      {
+        "type": "LEDControl",
+        "count": 4
+      },
+      {
+        "type": "GroupBoxControl",
+        "count": 4
+      },
+      {
+        "type": "PanelButtonControl",
+        "count": 4
+      },
+      {
+        "type": "LCDControl",
+        "count": 2
+      },
+      {
+        "type": "Panel",
+        "count": 1
+      },
+      {
+        "type": "StartStopControl",
+        "count": 1
+      },
+      {
+        "type": "TrackBarControl",
+        "count": 1
+      },
+      {
+        "type": "ButtonControl",
+        "count": 1
+      },
+      {
+        "type": "SwitchControl",
+        "count": 1
+      }
+    ],
+    "controlNames": [
+      "StaticTextControl9",
+      "LEDControl4",
+      "StaticTextControl5",
+      "LCDControl2",
+      "LEDControl1",
+      "StaticTextControl8",
+      "StaticTextControl7",
+      "LEDControl2",
+      "TextBoxControl5",
+      "TextBoxControl4",
+      "TextBoxControl2",
+      "StartStopControl1",
+      "TextBoxControl1",
+      "ComboBoxControl7",
+      "ComboBoxControl6",
+      "ComboBoxControl5",
+      "ComboBoxControl3",
+      "ComboBoxControl2",
+      "ComboBoxControl1",
+      "ComboBoxControl4",
+      "TrackBarControl1",
+      "LCDControl1",
+      "TextBoxControl3",
+      "StaticTextControl6",
+      "GroupBoxControl1",
+      "CheckBoxControl9",
+      "CheckBoxControl7",
+      "TextBoxControl10",
+      "TextBoxControl12",
+      "GroupBoxControl2",
+      "ButtonControl2",
+      "PanelButtonControl4",
+      "PanelButtonControl3",
+      "CheckBoxControl6",
+      "CheckBoxControl2",
+      "CheckBoxControl5",
+      "CheckBoxControl1",
+      "CheckBoxControl3",
+      "CheckBoxControl4",
+      "PanelButtonControl2",
+      "PanelButtonControl1",
+      "GroupBoxControl3",
+      "SwitchControl1",
+      "LEDControl3",
+      "GroupBoxControl4",
+      "Panel"
+    ],
+    "symbols": [
+      "4;16;MESSAGES;;;CRC_BSMOff;1;;;-1",
+      "4;16;MESSAGES;;;MessageCounter_BSMOff;1;;;-1",
+      "4;16;MESSAGES;;;pnlBCM_COMMAND_disable;1;;;-1",
+      "4;16;MESSAGES;;;pnlBSM1_disable;1;;;-1",
+      "4;16;MESSAGES;;;pnlMOT1_disable;1;;;-1",
+      "4;16;MESSAGES;;;pnlMOT3_disable;1;;;-1",
+      "4;16;MESSAGES;;;pnlSTATUS_C_BCM2_disable;1;;;-1",
+      "4;16;MESSAGES;;;pnlSTATUS_C_IPC_disable;1;;;-1",
+      "4;16;VTS::Ignition;;;Active;1;;;-1",
+      "4;16;XCP::SCIR;;;CityModeSts_Cnt_M_lgc;1;;;-1",
+      "4;16;XCP::SCIR;;;CmdIgnSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;EngSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;OpModeSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_ModeMachine_StaMd9_SystemState9_Mode;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_VehPwrMd_ATermActive_Cnt_lgc;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_VehPwrMd_CTermActive_Cnt_lgc;1;;;-1",
+      "4;16;XCP::SCIR;;;SrlComVehSpd_Kph_M_f32;2;;;-1",
+      "4;2;CCAN;BCM;BCM_COMMAND;OperationalModeSts;1;CCAN;;-1",
+      "4;2;CCAN;BCM;CFG_DATA_CODE_REQUEST;Digit_01;1;CCAN;;-1",
+      "4;2;CCAN;BCM;STATUS_C_BCM2;CityModeSts;1;CCAN;;-1",
+      "4;2;CCAN;BCM;STATUS_C_BCM2;CmdIgnSts;1;CCAN;;-1",
+      "4;2;CCAN;BCM;STATUS_C_BCM2;CmdIgn_FailSts;1;CCAN;;-1",
+      "4;2;CCAN;BSM;BSM1;CRC_B1;1;CCAN;;-1",
+      "4;2;CCAN;BSM;BSM1;MessageCounter_B1;1;CCAN;;-1",
+      "4;2;CCAN;BSM;BSM1;VehicleSpeedVSOSig;1;CCAN;;-1",
+      "4;2;CCAN;BSM;BSM1;VehicleSpeedVSOSigFailSts;1;CCAN;;-1",
+      "4;2;CCAN;ECM;MOT1;EngineSts;1;CCAN;;-1",
+      "4;2;CCAN;EPS;GE;ElectricSteeringFailSts;1;CCAN;;-1",
+      "4;2;CCAN;EPS;GE;LwsAngle;1;CCAN;;-1",
+      "4;2;CCAN;IPC;STATUS_C_IPC;ElectricSteeringLamp_FailSts;1;CCAN;;-1"
+    ],
+    "symbolCount": 30
+  },
+  {
+    "file": "FiasaOld.xvp",
+    "size": 21831,
+    "controlCount": 24,
+    "controlTypes": [
+      {
+        "type": "TextBoxControl",
+        "count": 10
+      },
+      {
+        "type": "StaticTextControl",
+        "count": 5
+      },
+      {
+        "type": "ComboBoxControl",
+        "count": 3
+      },
+      {
+        "type": "LCDControl",
+        "count": 2
+      },
+      {
+        "type": "ButtonControl",
+        "count": 2
+      },
+      {
+        "type": "Panel",
+        "count": 1
+      },
+      {
+        "type": "StartStopControl",
+        "count": 1
+      }
+    ],
+    "controlNames": [
+      "TextBoxControl10",
+      "TextBoxControl9",
+      "StaticTextControl5",
+      "LCDControl2",
+      "TextBoxControl8",
+      "TextBoxControl7",
+      "ButtonControl2",
+      "TextBoxControl6",
+      "LCDControl1",
+      "StaticTextControl4",
+      "TextBoxControl5",
+      "StaticTextControl3",
+      "ComboBoxControl3",
+      "StaticTextControl2",
+      "TextBoxControl4",
+      "ComboBoxControl2",
+      "TextBoxControl3",
+      "StaticTextControl1",
+      "TextBoxControl2",
+      "ComboBoxControl1",
+      "StartStopControl1",
+      "TextBoxControl1",
+      "ButtonControl1",
+      "Panel"
+    ],
+    "symbols": [
+      "4;16;VTS::Ignition;;;Active;1;;;-1",
+      "4;16;XCP::SCIR;;;AbsHwPos_HwPosState_Cnt_M_enum;1;;;-1",
+      "4;16;XCP::SCIR;;;CmdIgnSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;EngSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;OpModeSts_Cnt_M_u8;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_AbsHwPos_HandwheelPosition_HwDeg_f32;2;;;-1",
+      "4;16;XCP::SCIR;;;Rte_AbsHwPos_HwPosSource_Cnt_u16;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_ModeMachine_StaMd9_SystemState9_Mode;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_VehPwrMd_ATermActive_Cnt_lgc;1;;;-1",
+      "4;16;XCP::SCIR;;;Rte_VehPwrMd_CTermActive_Cnt_lgc;1;;;-1",
+      "4;16;XCP::SCIR;;;SrlComVehSpd_Kph_M_f32;2;;;-1",
+      "4;2;CCAN;BCM;BCM_COMMAND;OperationalModeSts;1;CCAN;;-1",
+      "4;2;CCAN;BCM;CFG_DATA_CODE_REQUEST;Digit_01;1;CCAN;;-1",
+      "4;2;CCAN;BCM;STATUS_C_BCM2;CmdIgnSts;1;CCAN;;-1",
+      "4;2;CCAN;BSM;BSM1;VehicleSpeedVSOSig;1;CCAN;;-1",
+      "4;2;CCAN;ECM;MOT1;EngineSts;1;CCAN;;-1"
+    ],
+    "symbolCount": 16
+  },
+  {
+    "file": "Panel1.xvp",
+    "size": 2305,
+    "controlCount": 3,
+    "controlTypes": [
+      {
+        "type": "Panel",
+        "count": 1
+      },
+      {
+        "type": "TextBoxControl",
+        "count": 1
+      },
+      {
+        "type": "StartStopControl",
+        "count": 1
+      }
+    ],
+    "controlNames": [
+      "TextBoxControl1",
+      "StartStopControl1",
+      "Panel"
+    ],
+    "symbols": [
+      "4;2;CCAN;BCM;BCM_COMMAND;OperationalModeSts;1;CCAN;;-1"
+    ],
+    "symbolCount": 1
+  },
+  {
+    "file": "trialpanel.xvp",
+    "size": 84428,
+    "controlCount": 83,
+    "controlTypes": [
+      {
+        "type": "TextBoxControl",
+        "count": 49
+      },
+      {
+        "type": "CheckBoxControl",
+        "count": 13
+      },
+      {
+        "type": "LCDControl",
+        "count": 6
+      },
+      {
+        "type": "ButtonControl",
+        "count": 4
+      },
+      {
+        "type": "StaticTextControl",
+        "count": 4
+      },
+      {
+        "type": "ComboBoxControl",
+        "count": 2
+      },
+      {
+        "type": "TrackBarControl",
+        "count": 2
+      },
+      {
+        "type": "Panel",
+        "count": 1
+      },
+      {
+        "type": "StartStopControl",
+        "count": 1
+      },
+      {
+        "type": "NumericUpDownControl",
+        "count": 1
+      }
+    ],
+    "controlNames": [
+      "StartStopControl1",
+      "TextBoxControl49",
+      "ButtonControl4",
+      "LCDControl6",
+      "ButtonControl3",
+      "CheckBoxControl13",
+      "CheckBoxControl12",
+      "CheckBoxControl11",
+      "CheckBoxControl10",
+      "CheckBoxControl9",
+      "TextBoxControl44",
+      "TextBoxControl45",
+      "TextBoxControl46",
+      "TextBoxControl47",
+      "TextBoxControl48",
+      "TextBoxControl39",
+      "TextBoxControl40",
+      "TextBoxControl41",
+      "TextBoxControl42",
+      "TextBoxControl43",
+      "TextBoxControl34",
+      "TextBoxControl35",
+      "TextBoxControl36",
+      "TextBoxControl37",
+      "TextBoxControl38",
+      "TextBoxControl29",
+      "TextBoxControl30",
+      "TextBoxControl31",
+      "TextBoxControl32",
+      "TextBoxControl33",
+      "TextBoxControl24",
+      "TextBoxControl25",
+      "TextBoxControl26",
+      "TextBoxControl27",
+      "TextBoxControl28",
+      "TextBoxControl19",
+      "TextBoxControl20",
+      "TextBoxControl21",
+      "TextBoxControl22",
+      "TextBoxControl23",
+      "TextBoxControl14",
+      "TextBoxControl15",
+      "TextBoxControl16",
+      "TextBoxControl17",
+      "TextBoxControl18",
+      "ButtonControl2",
+      "TextBoxControl13",
+      "TextBoxControl12",
+      "LCDControl5",
+      "TextBoxControl7",
+      "TextBoxControl8",
+      "TextBoxControl9",
+      "TextBoxControl10",
+      "TextBoxControl11",
+      "TextBoxControl6",
+      "TextBoxControl5",
+      "TextBoxControl4",
+      "TextBoxControl3",
+      "TextBoxControl2",
+      "ButtonControl1",
+      "StaticTextControl7",
+      "StaticTextControl3",
+      "StaticTextControl2",
+      "StaticTextControl6",
+      "ComboBoxControl1",
+      "ComboBoxControl2",
+      "TextBoxControl1",
+      "LCDControl4",
+      "LCDControl3",
+      "CheckBoxControl8",
+      "CheckBoxControl7",
+      "LCDControl2",
+      "LCDControl1",
+      "CheckBoxControl5",
+      "CheckBoxControl6",
+      "CheckBoxControl4",
+      "NumericUpDownControl1",
+      "CheckBoxControl3",
+      "CheckBoxControl2",
+      "TrackBarControl2"
+    ],
+    "symbols": [
+      "4;16;IgnCycle;;;VariableTime;1;;;-1",
+      "4;16;LinkTestVariables;;;IgnitionCycle_TestCycleNumber;1;;;-1",
+      "4;16;ReadNTCPanel;;;ClearNTCs;1;;;-1",
+      "4;16;ReadNTCPanel;;;Message131;1;;;-1",
+      "4;16;ReadNTCPanel;;;Message17D;1;;;-1",
+      "4;16;ReadNTCPanel;;;Message3E9;1;;;-1",
+      "4;16;ReadNTCPanel;;;MessageC9;1;;;-1",
+      "4;16;ReadNTCPanel;;;MessagesPanel;1;;;-1",
+      "4;16;ReadNTCPanel;;;NTC1;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC1;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC1;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC1;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC1;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC2;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC2;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC2;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC2;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC2;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC3;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC3;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC3;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC3;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC3;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC4;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC4;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC4;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC4;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC4;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC5;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC5;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC5;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC5;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC5;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC6;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC6;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC6;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC6;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC6;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC7;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC7;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC7;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC7;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC7;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC8;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC8;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC8;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC8;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC8;1;;;4",
+      "4;16;ReadNTCPanel;;;NTC9;1;;;0",
+      "4;16;ReadNTCPanel;;;NTC9;1;;;1",
+      "4;16;ReadNTCPanel;;;NTC9;1;;;2",
+      "4;16;ReadNTCPanel;;;NTC9;1;;;3",
+      "4;16;ReadNTCPanel;;;NTC9;1;;;4",
+      "4;16;ReadNTCPanel;;;ReadSysState;1;;;-1",
+      "4;16;ReadNTCPanel;;;StartRead;1;;;-1",
+      "4;16;ReadNTCPanel;;;SystemState;1;;;0",
+      "4;16;ReadNTCPanel;;;TesterPresent;1;;;-1",
+      "4;16;VTS::Battery;;;AvgCurrent;2;;;-1",
+      "4;16;VTS::ExtSupp1;;;RefVoltage;2;;;-1",
+      "4;16;VTS::Ignition;;;Active;1;;;-1",
+      "4;2;CN200_EPS;BCM_HS;PPEI_Platform_General_Status;Ignition_Key_Position;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EBCM_HS;VehicleSpeedAveragDriven;VehicleSpeedAverageDriven1;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EBCM_HS;VehicleSpeedAveragDriven;VehicleSpeedDrivenValidity1;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;ECM_HS;PPEI_Engine_General_Status_1;EngRunActive;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;ECM_HS;PPEI_Engine_General_Status_1;EngSpeedStatus;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;ECM_HS;PPEI_Vehicle_Speed_and_Distance;VehicleSpeedAverageDriven;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;ECM_HS;PPEI_Vehicle_Speed_and_Distance;VehicleSpeedDrivenValidity;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;EPSInd;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;SteeringLoad;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;SteeringWheelAngle;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;SteeringWheelAngleCalStatus;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;SteeringWheelAngleInvalid;1;GlobalA_HS;;-1",
+      "4;2;CN200_EPS;EPS;PPEI_Steering_Wheel_Angle;SteeringWheelAngleSensorInit;1;GlobalA_HS;;-1",
+      "4;2;Haitec_LC_HS2_CAN;EPAS;DiagRespFromEPAS;DiagRespFromSAS;1;DSS;;-1"
+    ],
+    "symbolCount": 74
+  }
+]

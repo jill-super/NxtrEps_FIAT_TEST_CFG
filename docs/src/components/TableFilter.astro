@@ -1,0 +1,42 @@
+---
+interface Props {
+  inputId: string;
+  tableId: string;
+  countId: string;
+  placeholder?: string;
+  hint?: string;
+}
+const { inputId, tableId, countId, placeholder = 'Type to filter…', hint = '' } = Astro.props;
+---
+
+<div class="filter-bar">
+  <input type="search" id={inputId} placeholder={placeholder} aria-label={placeholder} autocomplete="off" />
+  <span class="count" id={countId} aria-live="polite"></span>
+</div>
+{hint && <p><small>{hint}</small></p>}
+
+<script define:vars={{ inputId, tableId, countId }}>
+  const wire = () => {
+    const input = document.getElementById(inputId);
+    const table = document.getElementById(tableId);
+    const count = document.getElementById(countId);
+    if (!input || !table) return;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const total = rows.length;
+    const update = () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      for (const r of rows) {
+        const hit = !q || (r.textContent || '').toLowerCase().includes(q);
+        r.style.display = hit ? '' : 'none';
+        if (hit) shown++;
+      }
+      // hide empty group headers (rows with data-group attr whose next siblings are all hidden)
+      if (count) count.textContent = q ? `${shown} / ${total} rows` : `${total} rows`;
+    };
+    input.addEventListener('input', update);
+    update();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+</script>

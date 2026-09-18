@@ -1,0 +1,155 @@
+{
+  ".a2l": {
+    "count": 1,
+    "files": [
+      "A2L/Rte_4.00.00.a2l"
+    ],
+    "about": "ASAP2 measurement & calibration description (XCP/CANape)"
+  },
+  ".blf": {
+    "count": 1,
+    "files": [
+      "Canoe Config/Trace.blf"
+    ],
+    "about": "Vector Binary Logging Format — CAN trace recording"
+  },
+  ".can": {
+    "count": 9,
+    "files": [
+      "Capl/BCM.can",
+      "Capl/BSM.can",
+      "Capl/ECM.can",
+      "Capl/EPS_VT_SIM_001.CAN",
+      "Capl/IPC.can",
+      "Capl/Init VT7001.can",
+      "Capl/MessageAnalysis.can",
+      "Capl/UC_FREIN.can",
+      "Capl/XCPTest_Fiasa.CAN"
+    ],
+    "about": "CAPL source — simulation / test node"
+  },
+  ".cbf": {
+    "count": 6,
+    "files": [
+      "Capl/BCM.cbf",
+      "Capl/BCM2.cbf",
+      "Capl/BSM.cbf",
+      "Capl/ECM.cbf",
+      "Capl/IPC.cbf",
+      "Capl/Init VT7001.cbf"
+    ],
+    "about": "Compiled CAPL branch file (binary, built from .can)"
+  },
+  ".cdd": {
+    "count": 2,
+    "files": [
+      "CDD/DSS.cdd",
+      "CDD/Fiasa_326_327_4.00.00.cdd"
+    ],
+    "about": "CANdela diagnostics description — ECU, sessions, services, DIDs/DTCs"
+  },
+  ".cfg": {
+    "count": 1,
+    "files": [
+      "Canoe Config/Fiasa.cfg"
+    ],
+    "about": "CANoe configuration (v8.5.98) — buses, DBs, nodes, windows"
+  },
+  ".dbc": {
+    "count": 2,
+    "files": [
+      "DBC/DSS.dbc",
+      "DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc"
+    ],
+    "about": "CAN database — messages, signals, ECUs, value tables"
+  },
+  ".dmp": {
+    "count": 1,
+    "files": [
+      "Canoe Config/CANapeFault.dmp"
+    ],
+    "about": "CANape crash dump (binary, diagnostic only)"
+  },
+  ".html": {
+    "count": 1,
+    "files": [
+      "Capl/Init VT7001_report.html"
+    ],
+    "about": "CAPL test execution report (rendered)"
+  },
+  ".ini": {
+    "count": 3,
+    "files": [
+      "A2L/Rte_4.00.00.INI",
+      "Canoe Config/CANape.INI",
+      "DBC/P3271_C-CAN [07339]_6A_R1_CR1664.ini"
+    ],
+    "about": "Tool INI — CANape / DBC-viewer settings"
+  },
+  ".log": {
+    "count": 3,
+    "files": [
+      "CDD/Load_migration_7.5.2101_to_8.2.106_Fiasa_326_327_4.00.00.log",
+      "Canoe Config/DumpStartWrite.log",
+      "Canoe Config/FaultHistory.log"
+    ],
+    "about": "Tool log (migration / fault history)"
+  },
+  ".md": {
+    "count": 1,
+    "files": [
+      "README.md"
+    ],
+    "about": "Markdown documentation (repo README)"
+  },
+  ".tse": {
+    "count": 2,
+    "files": [
+      "Canoe Config/Test_FIASA.tse",
+      "Canoe Config/Test_FIASA_ver81.tse"
+    ],
+    "about": "CANoe test setup / test environment"
+  },
+  ".txt": {
+    "count": 2,
+    "files": [
+      "Canoe Config/traceLog.txt",
+      "Capl/traceLog.txt"
+    ],
+    "about": "Plain-text log"
+  },
+  ".vsysvar": {
+    "count": 3,
+    "files": [
+      "A2L/bl.vsysvar",
+      "system_variables/SIGNALS.vsysvar",
+      "system_variables/sys.vsysvar"
+    ],
+    "about": "CANoe system variables definition (XML)"
+  },
+  ".vtcfg": {
+    "count": 2,
+    "files": [
+      "Canoe Config/Fiasa.vtcfg",
+      "Canoe Config/Fiasa_VTsys.vtcfg"
+    ],
+    "about": "VT System configuration — modules, channels, stimulus values"
+  },
+  ".xml": {
+    "count": 1,
+    "files": [
+      "Capl/Init VT7001_report.xml"
+    ],
+    "about": "CAPL test execution report (machine readable)"
+  },
+  ".xvp": {
+    "count": 4,
+    "files": [
+      "Canoe Config/Fiasa326.xvp",
+      "Canoe Config/FiasaOld.xvp",
+      "Canoe Config/Panel1.xvp",
+      "Canoe Config/trialpanel.xvp"
+    ],
+    "about": "CANoe panel file — controls bound to signals / sysvars"
+  }
+}

@@ -1,0 +1,114 @@
+/* FIASA docs — small theme tweaks on top of Starlight. */
+:root {
+  --sl-color-accent-low: #0b2c4d;
+  --sl-color-accent: #0e7cc4;
+  --sl-color-accent-high: #bfe6ff;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 1.2rem 0;
+}
+
+.stat-card {
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: var(--sl-color-bg-nav);
+}
+.stat-card b {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.stat-card span {
+  color: var(--sl-color-gray-3);
+  font-size: 0.9rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+.filter-bar input[type='search'],
+.filter-bar select {
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-bg-nav);
+  color: inherit;
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  min-width: min(320px, 100%);
+}
+.filter-bar .count {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--sl-color-gray-3);
+}
+
+.data-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 12px;
+  max-height: 560px;
+}
+table.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88rem;
+}
+table.data-table th {
+  position: sticky;
+  top: 0;
+  background: var(--sl-color-bg-nav);
+  z-index: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+table.data-table th,
+table.data-table td {
+  border-bottom: 1px solid var(--sl-color-hairline);
+  padding: 0.45rem 0.6rem;
+  vertical-align: top;
+}
+table.data-table tr:hover td {
+  background: color-mix(in srgb, var(--sl-color-accent) 8%, transparent);
+}
+code.inline-id {
+  white-space: nowrap;
+}
+
+.repo-map {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 1rem 0;
+}
+.repo-map a {
+  text-decoration: none;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  background: var(--sl-color-bg-nav);
+  display: block;
+}
+.repo-map a:hover {
+  border-color: var(--sl-color-accent);
+}
+.repo-map strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.repo-map small {
+  color: var(--sl-color-gray-3);
+}
+
+.callout-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}

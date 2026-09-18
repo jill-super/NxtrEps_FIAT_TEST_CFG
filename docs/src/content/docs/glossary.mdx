@@ -1,0 +1,25 @@
+---
+title: Glossary
+description: Bench and automotive terms used across these docs.
+---
+
+| Term | Meaning |
+| ---- | ------- |
+| A2L / ASAP2 | ASCII description of ECU measurements/calibrations for XCP tools (here: RTE 4.00.00, 422 measurements). |
+| BLF | Vector Binary Logging Format — compressed CAN recording (`Trace.blf`). |
+| BCM / BSM / ECM / IPC / EPS / MTA / ORC / PAM | ECUs on C-CAN: body, brake, engine, cluster, power steering (UUT), transmission, restraint, park assist. |
+| CANdela / CDD | Vector diagnostics authoring format; `.cdd` holds sessions, services, DIDs, DTCs. |
+| CAPL / `.can` / `.cbf` | CANoe's C-like language; `.can` source compiles to `.cbf` binary. |
+| CCAN / Can2 | The two CANoe networks: vehicle C-CAN vs DSS/XCP bench bus. |
+| DID | Data Identifier — UDS read/write handle (e.g. `0x0ADA`). |
+| DTD | CANdela document-type version (7.5.2101 filed, migrated to 8.2.106). |
+| DSS | Bench/support database + diagnostics (`DSS.dbc`, `DSS.cdd`, `XcpSlave/Master`). |
+| IL / Interaction Layer | CANoe layer that sends/receives DB messages; toggled via `ILDisableMsg`/`ILEnableMsg`, started with `ILActivateClamp15()`. |
+| NRC | UDS negative response code (e.g. incorrect length). |
+| NTC | Diagnostic trouble-code slot staged through `NTC*_ *` sysvars. |
+| RTE | AUTOSAR Run-Time Environment — the `Rte_4.00.00` software basis of the A2L. |
+| TSE | CANoe test setup/environment file (`Test_FIASA.tse`). |
+| UDS | Unified Diagnostic Services (ISO 14229) — sessions in the CDDs. |
+| VT System / VT7001 | Vector programmable bench hardware (power, torque, position, motor channels). |
+| XCP | Universal measurement/calibration protocol; `XcpMaster/Slave`, `XCPTest_Fiasa.CAN`. |
+| XVP | CANoe panel file binding controls to signals/sysvars. |

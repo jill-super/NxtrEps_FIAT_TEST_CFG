@@ -1,0 +1,98 @@
+---
+title: CDD — Diagnostics
+description: EPS and bench diagnostic descriptions — classes, instances, services, migration log.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import fiasa from '../../data/cdd_fiasa.json';
+import dss from '../../data/cdd_dss.json';
+import migration from '../../data/cdd_migration.json';
+
+CANdela (`.cdd`) files describe the diagnostic interface of each ECU: sessions, services, data identifiers (DIDs), routines and DTCs. CANoe loads both of these as diagnostic descriptions (see [CANoe configuration](./canoe-config/)).
+
+| File | ECU | DTD | Classes / instances / services | Data objects |
+| ---- | --- | --- | ------------------------------ | ------------ |
+| `CDD/Fiasa_326_327_4.00.00.cdd` ({(fiasa.size / 1024 / 1024).toFixed(2)} MB) | {fiasa.ecus.map((e) => e.name).join('; ') || 'EPS'} | {fiasa.dtd} (Fiat, `{fiasa.languages}`) | {fiasa.counts.diagClasses} / {fiasa.counts.diagInstances} / {fiasa.counts.services} | {fiasa.counts.dataObjects} |
+| `CDD/DSS.cdd` ({(dss.size / 1024).toFixed(0)} KB) | {dss.ecus.map((e) => e.name).join('; ')} | {dss.dtd} (Vector) | {dss.counts.diagClasses} / {dss.counts.diagInstances} / {dss.counts.services} | {dss.counts.dataObjects} |
+
+The FIASA CDD targets the **Nexteer Electric Power Steering (P3272/P341, Next Gen A)** — the same ECU the `Capl/traceLog.txt` diagnostic session talks to (`Nexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1`).
+
+## FIASA CDD — diagnostic classes
+
+Each class groups one diagnostic function (UDS service family). Expand a class to see its instances and services.
+
+{fiasa.diagClasses.filter((c) => c.instances.length > 0).map((c) => (
+  <details>
+    <summary><strong>{c.name}</strong> <code>{c.qual}</code> — {c.instances.length} instance(s), {c.instances.reduce((n, i) => n + i.services.length, 0)} service(s)</summary>
+    {c.instances.map((inst) => (
+      <div>
+        <p><strong>{inst.name}</strong> {inst.qual && <code>{inst.qual}</code>}</p>
+        <ul>
+          {inst.services.map((s) => (
+            <li><code>{s.shortcut || s.name || s.qual}</code>{s.shortcut && s.name && s.name !== s.shortcut ? ` (${s.name})` : ''} — func:{s.func} phys:{s.phys}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </details>
+))}
+
+## FIASA CDD — searchable service list
+
+<TableFilter inputId="cdd-search" tableId="cdd-table" countId="cdd-count" placeholder="Filter services — try Session, Reset, DID, Routine…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="cdd-table">
+<thead><tr><th>Class</th><th>Instance</th><th>Service</th><th>Shortcut</th><th>Func / Phys</th></tr></thead>
+<tbody>
+{fiasa.diagClasses.flatMap((c) => c.instances.flatMap((inst) => inst.services.map((s) => (
+  <tr>
+    <td>{c.name}</td>
+    <td>{inst.name}</td>
+    <td>{s.name || '—'}</td>
+    <td><code>{s.shortcut || s.qual || '—'}</code></td>
+    <td><code>{s.func}/{s.phys}</code></td>
+  </tr>
+))))}
+</tbody>
+</table>
+</div>
+
+## DSS CDD — bench / manufacturing services
+
+The DSS CDD (`Nexteer Common Manufacturing Services`, DTD {dss.dtd}) is much smaller — sessions, a few stored-data DIDs, ECU identification and routines:
+
+{dss.diagClasses.map((c) => (
+  <details open>
+    <summary><strong>{c.name}</strong> — {c.instances.length} instance(s)</summary>
+    {c.instances.map((inst) => (
+      <div>
+        <p><strong>{inst.name}</strong> {inst.qual && <code>{inst.qual}</code>}</p>
+        <ul>
+          {inst.services.map((s) => (
+            <li><code>{s.shortcut || s.name || s.qual}</code> — func:{s.func} phys:{s.phys}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </details>
+))}
+
+## Migration log
+
+`CDD/Load_migration_7.5.2101_to_8.2.106_Fiasa_326_327_4.00.00.log` ({migration.lines} lines) records the CANdela upgrade of the FIASA CDD from DTD **7.5.2101** to **8.2.106** (template `FIAT Standard enhanced Diagnostic Protocol on CAN`, save 21). Highlights:
+
+- DTC status-mask migration (8.0.1): all 8 status bits kept as optional/supported.
+- DID migration (8.1.1): packet types converted to DIDs — e.g. `Odometer` → DID 259, `Session_Control_Disabled` → DID 262, `Roe_Activation_State_1` → DID 263.
+- Variant loads: `CommonDiagnostics` + `_FF_00_00_0002_00D2_P3272_P341_Next_Gen_A`.
+
+<details>
+<summary>First {migration.excerpt.length} lines of the log</summary>
+<pre><code>{migration.excerpt.join('\n')}</code></pre>
+</details>
+
+## How to use the CDDs
+
+1. In CANoe Diagnostics console, select the EPS description (`Fiasa_326_327_4.00.00.cdd`) for UDS work against the steering ECU, or `DSS.cdd` for bench/manufacturing functions.
+2. Match service names above to the `Capl/traceLog.txt` entries (e.g. DID `0x0ADA` reads) — see [Traces & logs](./traces-logs/).
+3. For XCP-based measurement instead of UDS, use the [A2L](./a2l/) description.

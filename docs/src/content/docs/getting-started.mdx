@@ -1,0 +1,63 @@
+---
+title: Getting started
+description: Open the FIASA CANoe bench, bring it up in the right order, and know where everything lives.
+---
+
+This page gets you from a fresh clone to a running measurement in the fewest steps. The repo targets **CANoe 8.5.98 SP4 (32-bit PRO)** with a **VT System** and **CANape 11** for XCP.
+
+## Prerequisites
+
+| Need | Detail |
+| ---- | ------ |
+| Vector CANoe | 8.5.98 SP4, PRO, 32-bit. The `.cfg`, `.tse` and `.xvp` files all carry this version stamp. |
+| Vector VT System | VT7001-class modules (power, M38/M3/M42 I/O). Configured in `Canoe Config/Fiasa.vtcfg`. |
+| Vector CANape 11 | For the A2L (`A2L/Rte_4.00.00.a2l`, ASAP2 v1.60) + `Canoe Config/CANape.INI`. |
+| CAN hardware | 2 CAN channels: **CCAN** (vehicle bus) + **Can2** (DSS/XCP bench bus). See `Fiasa.cfg` → `ILConfiguration::VNetwork`. |
+| This repo | Clone preserving the folder layout — `Fiasa.cfg` references siblings via relative paths (`..\DBC\…`, `..\CDD\…`, `..\Capl\…`, `..\system_variables\…`). |
+
+:::caution
+Paths matter. `Fiasa.cfg` uses relative paths like `..\DBC\P3271_C-CAN [07339]_6A_R1_CR1664.dbc`. Keep the top-level folder names (`A2L`, `CDD`, `Canoe Config`, `Capl`, `DBC`, `system_variables`) exactly as committed.
+:::
+
+## 5-minute bring-up
+
+1. **Power & VT first.** Apply bench power, then open `Canoe Config/Fiasa_VTsys.vtcfg` (or `Fiasa.vtcfg` — they are identical) in VT System Config to confirm the 6 modules / 37 channels enumerate (Battery, Ignition, DigTrq1/2, Torque1/2, Position1-4, Motor1-8 …). Details: [VT System](./vt-system/).
+2. **Open the CANoe config.** In CANoe: File → Open → `Canoe Config/Fiasa.cfg`. Confirm both databases load: `DBC/DSS.dbc` (as `DSS` on Can2) and `DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc` (as `CCAN`), plus both CDDs and `system_variables/sys.vsysvar`. Details: [CANoe configuration](./canoe-config/).
+3. **Check simulation nodes.** The Simulation Setup should show the CAPL nodes (`BCM`, `BSM`, `ECM`, `IPC` stubs + VT init). Sources are `Capl/*.can`, binaries `Capl/*.cbf`. Details: [CAPL](./capl/).
+4. **Start measurement, open panels.** Start CANoe measurement, then open `Canoe Config/Fiasa326.xvp` (main EPS panel) and/or `trialpanel.xvp`. Toggles such as `pnlBCM_COMMAND_disable` map to `MESSAGES::*` sysvars that enable/disable IL messages. Details: [Panels](./panels/), [System variables](./system-variables/).
+5. **Attach XCP / diagnostics.** Load `A2L/Rte_4.00.00.a2l` in CANape/XCP for the 422 RTE measurements, and use the CDD in CANoe's diagnostics console (`CDD/Fiasa_326_327_4.00.00.cdd` for EPS, `CDD/DSS.cdd` for bench). Details: [A2L](./a2l/), [CDD](./cdd/).
+
+## Running the VT init test
+
+The repo ships a ready-made test setup:
+
+- `Canoe Config/Test_FIASA.tse` (+ `Test_FIASA_ver81.tse` variant) — a CAPL test node running `Capl/Init VT7001.can` (binary `Init VT7001.cbf`).
+- Last recorded run: **2016-03-21, verdict `pass`** (`Capl/Init VT7001_report.xml` / `.html`).
+
+Open the `.tse` in CANoe's Test Setup window and execute. Full breakdown: [Test execution](./test-execution/).
+
+## Where things live
+
+| Folder | Contains | Start with |
+| ------ | -------- | ---------- |
+| `Canoe Config/` | `Fiasa.cfg`, panels, VT configs, test setups, `CANape.INI`, trace + logs | [CANoe configuration](./canoe-config/) |
+| `DBC/` | C-CAN database (77 msgs) + DSS bench database (4 msgs) | [DBC](./dbc/) |
+| `CDD/` | EPS diagnostics + DSS diagnostics + migration log | [CDD](./cdd/) |
+| `A2L/` | RTE A2L + CANape map INI + bus-load sysvar | [A2L](./a2l/) |
+| `Capl/` | 8 CAPL sources, 6 compiled binaries, test report, trace log | [CAPL](./capl/) |
+| `system_variables/` | `sys.vsysvar` (52 vars), empty `SIGNALS.vsysvar` | [System variables](./system-variables/) |
+
+## Deploying these docs (for maintainers)
+
+These docs are an **Astro + Starlight** site in `docs/`, ready for GitHub Pages
+without hardcoding an owner or repo name (the base path comes from the
+`ASTRO_BASE` env var at build time — see `docs/README.md`):
+
+```bash
+cd docs
+npm install
+npm run dev     # local preview
+npm run build   # outputs to docs/dist/
+```
+
+Publish `docs/dist/` to Pages (your own workflow — none is committed by design). Remember to add a `.nojekyll` file at the publish root and set `ASTRO_BASE` to your project path (e.g. `/<repo>/`). The extractor `docs/scripts/extract.py` regenerates `docs/src/data/*.json` from the repo files whenever the bench config changes — re-run it and rebuild.

@@ -1,0 +1,83 @@
+---
+title: A2L — Measurement & calibration
+description: RTE 4.00.00 ASAP2 description — 422 measurements, groups, conversions, layouts.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import a2l from '../../data/a2l.json';
+import a2lIni from '../../data/a2l_ini.json';
+
+The A2L file is the **ASAP2 description of the EPS application (RTE 4.00.00)** used by CANape/XCP to measure and calibrate the ECU. Written by **CANape 11.0.0**, ASAP2 version **1.60**, project `{a2l.project}`, module `{a2l.module}`, byte order `{a2l.byteOrder}`.
+
+| Property | Value |
+| -------- | ----- |
+| File | `A2L/Rte_4.00.00.a2l` ({(a2l.size / 1024).toFixed(0)} KB, ~12.8k lines) |
+| Measurements (`/begin MEASUREMENT`) | **{a2l.measurementCount}** |
+| Groups (`/begin GROUP`) | **{a2l.groups.length}** (mostly `AbsHwPos.*` handwheel-position family) |
+| Conversion methods (`COMPU_METHOD`) | **{a2l.compuMethods.length}** |
+| Record layouts (`RECORD_LAYOUT`) | **{a2l.recordLayouts.length}** |
+| Characteristics / functions / axis points | 0 / 0 / 15 — this file is **measurement-only** (no calibratable maps in this export) |
+
+:::note
+No `/begin CHARACTERISTIC` blocks: this A2L export describes observable quantities (sensor values, fault accumulators, status words) for the test bench, not tunable curves/maps.
+:::
+
+## Measurement explorer (422 measurements)
+
+<TableFilter inputId="a2l-search" tableId="a2l-table" countId="a2l-count" placeholder="Filter measurements — try HwPos, BSM1, FailSts, OpMode…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="a2l-table">
+<thead><tr><th>Name</th><th>Datatype</th><th>Conversion</th><th>Limits</th></tr></thead>
+<tbody>
+{a2l.measurements.map((m) => (
+  <tr>
+    <td><code class="inline-id">{m.name}</code></td>
+    <td><code>{m.datatype}</code></td>
+    <td><code>{m.conversion}</code></td>
+    <td><code>{m.lower} … {m.upper}</code></td>
+  </tr>
+))}
+</tbody>
+</table>
+</div>
+
+Naming convention: `<function>_<signal>_<type>` with AUTOSAR-ish suffixes — `_f32` (float32), `_u8/_u16` (unsigned), `_lgc` (boolean), `_M_` (measured). The biggest family is `AbsHwPos.*` (handwheel position: `HandwheelPosition_HwDeg_f32`, `CumMechMtrPosCRF`, `AlignedCumMechMtrPosCRF`, …) plus BSM1 CRC/counter fault accumulators (`BSM1CRCFltAcc_Cnt_M_u16`, `BSM1MsgCounterFltAcc_Cnt_M_u16`) and mode/status words (`OpModeSts`, `EngSts`, `CityModeSts`, `ESLampFailSts`).
+
+## Groups (1006)
+
+Groups mirror the RTE component hierarchy (`AbsHwPos`, …). First 40:
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>Group</th><th>Description</th></tr></thead>
+<tbody>
+{a2l.groups.slice(0, 40).map((g) => (
+  <tr><td><code class="inline-id">{g.name}</code></td><td>{g.desc}</td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+Full list: `docs/src/data/a2l.json` (`groups`).
+
+## Conversions & layouts
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th><code>COMPU_METHOD</code></th><th>Type</th><th>Format</th></tr></thead>
+<tbody>
+{a2l.compuMethods.map((c) => (
+  <tr><td><code>{c.name}</code></td><td><code>{c.type}</code></td><td><code>{c.format}</code></td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+Record layouts cover every scalar used by the measurements: `RTE_RL_BOOLEAN`, `RTE_RL_FLOAT32_IEEE`, `RTE_RL_FLOAT64_IEEE`, `RTE_RL_SBYTE/SWORD/SLONG`, `RTE_RL_UBYTE/UWORD/ULONG`, plus `Z`/`S` addressing variants and `SSV_*` single-sample layouts ({a2l.recordLayouts.length} total).
+
+## Companion files
+
+- **`A2L/Rte_4.00.00.INI`** — CANape DB-editor map settings: map dir `C:\FIASA\Out Files\4.00.00\`, template `Fiasa_04.00.00`, extension `.out`:
+  <pre><code>{a2lIni.lines.join('\n')}</code></pre>
+- **`A2L/bl.vsysvar`** — a single bus-statistics sysvar (`_Statistics::CAN1::CANBusload`, float %, 0–100) for CANape/CANoe bus-load display. Also listed under [System variables](./system-variables/).

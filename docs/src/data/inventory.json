@@ -1,0 +1,317 @@
+[
+  {
+    "path": "README.md",
+    "dir": ".",
+    "name": "README.md",
+    "ext": ".md",
+    "size": 4019
+  },
+  {
+    "path": "A2L/Rte_4.00.00.INI",
+    "dir": "A2L",
+    "name": "Rte_4.00.00.INI",
+    "ext": ".ini",
+    "size": 298
+  },
+  {
+    "path": "A2L/Rte_4.00.00.a2l",
+    "dir": "A2L",
+    "name": "Rte_4.00.00.a2l",
+    "ext": ".a2l",
+    "size": 433424
+  },
+  {
+    "path": "A2L/bl.vsysvar",
+    "dir": "A2L",
+    "name": "bl.vsysvar",
+    "ext": ".vsysvar",
+    "size": 499
+  },
+  {
+    "path": "CDD/DSS.cdd",
+    "dir": "CDD",
+    "name": "DSS.cdd",
+    "ext": ".cdd",
+    "size": 491915
+  },
+  {
+    "path": "CDD/Fiasa_326_327_4.00.00.cdd",
+    "dir": "CDD",
+    "name": "Fiasa_326_327_4.00.00.cdd",
+    "ext": ".cdd",
+    "size": 2438447
+  },
+  {
+    "path": "CDD/Load_migration_7.5.2101_to_8.2.106_Fiasa_326_327_4.00.00.log",
+    "dir": "CDD",
+    "name": "Load_migration_7.5.2101_to_8.2.106_Fiasa_326_327_4.00.00.log",
+    "ext": ".log",
+    "size": 48769
+  },
+  {
+    "path": "Canoe Config/CANape.INI",
+    "dir": "Canoe Config",
+    "name": "CANape.INI",
+    "ext": ".ini",
+    "size": 22755
+  },
+  {
+    "path": "Canoe Config/CANapeFault.dmp",
+    "dir": "Canoe Config",
+    "name": "CANapeFault.dmp",
+    "ext": ".dmp",
+    "size": 78893
+  },
+  {
+    "path": "Canoe Config/DumpStartWrite.log",
+    "dir": "Canoe Config",
+    "name": "DumpStartWrite.log",
+    "ext": ".log",
+    "size": 74
+  },
+  {
+    "path": "Canoe Config/FaultHistory.log",
+    "dir": "Canoe Config",
+    "name": "FaultHistory.log",
+    "ext": ".log",
+    "size": 74
+  },
+  {
+    "path": "Canoe Config/Fiasa.cfg",
+    "dir": "Canoe Config",
+    "name": "Fiasa.cfg",
+    "ext": ".cfg",
+    "size": 377088
+  },
+  {
+    "path": "Canoe Config/Fiasa.vtcfg",
+    "dir": "Canoe Config",
+    "name": "Fiasa.vtcfg",
+    "ext": ".vtcfg",
+    "size": 59558
+  },
+  {
+    "path": "Canoe Config/Fiasa326.xvp",
+    "dir": "Canoe Config",
+    "name": "Fiasa326.xvp",
+    "ext": ".xvp",
+    "size": 35289
+  },
+  {
+    "path": "Canoe Config/FiasaOld.xvp",
+    "dir": "Canoe Config",
+    "name": "FiasaOld.xvp",
+    "ext": ".xvp",
+    "size": 21831
+  },
+  {
+    "path": "Canoe Config/Fiasa_VTsys.vtcfg",
+    "dir": "Canoe Config",
+    "name": "Fiasa_VTsys.vtcfg",
+    "ext": ".vtcfg",
+    "size": 59558
+  },
+  {
+    "path": "Canoe Config/Panel1.xvp",
+    "dir": "Canoe Config",
+    "name": "Panel1.xvp",
+    "ext": ".xvp",
+    "size": 2305
+  },
+  {
+    "path": "Canoe Config/Test_FIASA.tse",
+    "dir": "Canoe Config",
+    "name": "Test_FIASA.tse",
+    "ext": ".tse",
+    "size": 6175
+  },
+  {
+    "path": "Canoe Config/Test_FIASA_ver81.tse",
+    "dir": "Canoe Config",
+    "name": "Test_FIASA_ver81.tse",
+    "ext": ".tse",
+    "size": 6061
+  },
+  {
+    "path": "Canoe Config/Trace.blf",
+    "dir": "Canoe Config",
+    "name": "Trace.blf",
+    "ext": ".blf",
+    "size": 2909026
+  },
+  {
+    "path": "Canoe Config/traceLog.txt",
+    "dir": "Canoe Config",
+    "name": "traceLog.txt",
+    "ext": ".txt",
+    "size": 0
+  },
+  {
+    "path": "Canoe Config/trialpanel.xvp",
+    "dir": "Canoe Config",
+    "name": "trialpanel.xvp",
+    "ext": ".xvp",
+    "size": 84428
+  },
+  {
+    "path": "Capl/BCM.can",
+    "dir": "Capl",
+    "name": "BCM.can",
+    "ext": ".can",
+    "size": 844
+  },
+  {
+    "path": "Capl/BCM.cbf",
+    "dir": "Capl",
+    "name": "BCM.cbf",
+    "ext": ".cbf",
+    "size": 7578
+  },
+  {
+    "path": "Capl/BCM2.cbf",
+    "dir": "Capl",
+    "name": "BCM2.cbf",
+    "ext": ".cbf",
+    "size": 5995
+  },
+  {
+    "path": "Capl/BSM.can",
+    "dir": "Capl",
+    "name": "BSM.can",
+    "ext": ".can",
+    "size": 2475
+  },
+  {
+    "path": "Capl/BSM.cbf",
+    "dir": "Capl",
+    "name": "BSM.cbf",
+    "ext": ".cbf",
+    "size": 10435
+  },
+  {
+    "path": "Capl/ECM.can",
+    "dir": "Capl",
+    "name": "ECM.can",
+    "ext": ".can",
+    "size": 481
+  },
+  {
+    "path": "Capl/ECM.cbf",
+    "dir": "Capl",
+    "name": "ECM.cbf",
+    "ext": ".cbf",
+    "size": 7530
+  },
+  {
+    "path": "Capl/EPS_VT_SIM_001.CAN",
+    "dir": "Capl",
+    "name": "EPS_VT_SIM_001.CAN",
+    "ext": ".can",
+    "size": 33976
+  },
+  {
+    "path": "Capl/IPC.can",
+    "dir": "Capl",
+    "name": "IPC.can",
+    "ext": ".can",
+    "size": 361
+  },
+  {
+    "path": "Capl/IPC.cbf",
+    "dir": "Capl",
+    "name": "IPC.cbf",
+    "ext": ".cbf",
+    "size": 7236
+  },
+  {
+    "path": "Capl/Init VT7001.can",
+    "dir": "Capl",
+    "name": "Init VT7001.can",
+    "ext": ".can",
+    "size": 8563
+  },
+  {
+    "path": "Capl/Init VT7001.cbf",
+    "dir": "Capl",
+    "name": "Init VT7001.cbf",
+    "ext": ".cbf",
+    "size": 10897
+  },
+  {
+    "path": "Capl/Init VT7001_report.html",
+    "dir": "Capl",
+    "name": "Init VT7001_report.html",
+    "ext": ".html",
+    "size": 24168
+  },
+  {
+    "path": "Capl/Init VT7001_report.xml",
+    "dir": "Capl",
+    "name": "Init VT7001_report.xml",
+    "ext": ".xml",
+    "size": 7876
+  },
+  {
+    "path": "Capl/MessageAnalysis.can",
+    "dir": "Capl",
+    "name": "MessageAnalysis.can",
+    "ext": ".can",
+    "size": 27571
+  },
+  {
+    "path": "Capl/UC_FREIN.can",
+    "dir": "Capl",
+    "name": "UC_FREIN.can",
+    "ext": ".can",
+    "size": 1934
+  },
+  {
+    "path": "Capl/XCPTest_Fiasa.CAN",
+    "dir": "Capl",
+    "name": "XCPTest_Fiasa.CAN",
+    "ext": ".can",
+    "size": 44088
+  },
+  {
+    "path": "Capl/traceLog.txt",
+    "dir": "Capl",
+    "name": "traceLog.txt",
+    "ext": ".txt",
+    "size": 15845
+  },
+  {
+    "path": "DBC/DSS.dbc",
+    "dir": "DBC",
+    "name": "DSS.dbc",
+    "ext": ".dbc",
+    "size": 6981
+  },
+  {
+    "path": "DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc",
+    "dir": "DBC",
+    "name": "P3271_C-CAN [07339]_6A_R1_CR1664.dbc",
+    "ext": ".dbc",
+    "size": 516205
+  },
+  {
+    "path": "DBC/P3271_C-CAN [07339]_6A_R1_CR1664.ini",
+    "dir": "DBC",
+    "name": "P3271_C-CAN [07339]_6A_R1_CR1664.ini",
+    "ext": ".ini",
+    "size": 5944
+  },
+  {
+    "path": "system_variables/SIGNALS.vsysvar",
+    "dir": "system_variables",
+    "name": "SIGNALS.vsysvar",
+    "ext": ".vsysvar",
+    "size": 70
+  },
+  {
+    "path": "system_variables/sys.vsysvar",
+    "dir": "system_variables",
+    "name": "sys.vsysvar",
+    "ext": ".vsysvar",
+    "size": 9451
+  }
+]

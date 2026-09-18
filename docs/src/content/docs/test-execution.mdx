@@ -1,0 +1,44 @@
+---
+title: Test execution (TSE)
+description: The Test_FIASA setups — what they run, past verdict, and how to re-run.
+---
+
+import tse from '../../data/tse.json';
+import report from '../../data/capl_report.json';
+
+## The two setups
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>File</th><th>Size</th><th>CANoe stamp</th><th>CAPL source</th><th>CAPL binary</th></tr></thead>
+<tbody>
+{tse.map((t) => (
+  <tr><td><code>{t.file}</code></td><td>{(t.size / 1024).toFixed(1)} KB</td><td><code>{t.canoeVersion}</code></td><td><code>{(t.caplSource || []).join(', ')}</code></td><td><code>{(t.caplBinary || []).join(', ')}</code></td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+Both are `VTSPersistentRoot` test environments containing a single CAPL test node that runs **`Capl/Init VT7001.can`** (compiled: `Init VT7001.cbf`) — the VT7001 torque/position init sequence. The `ver81` variant differs only in node GUID/persistence bytes, not in test logic.
+
+## Last recorded result — `pass`
+
+`Capl/Init VT7001_report.xml` (engine: CANoe.LIN.XCP 8.5.98 SP4, config `C:\FIASA\FIASA_testconfig_8.5\Canoe Config\Fiasa.cfg`, engineer `PZ00M4`):
+
+| Field | Value |
+| ----- | ----- |
+| Module | `Init VT7001` (`Capl\Init VT7001.can`) |
+| Start | 2016-03-21 09:20:10 → end 09:20:11 (0.6 s) |
+| Verdicts | `2_basic` — overall **`pass`** |
+| Report | `Init VT7001_report.html` (926 lines, styled, printable) |
+
+Setup fingerprint (`xinfo`): {report.setup.map((s) => <span><code>{s.name}</code> </span>)} — full values in `docs/src/data/capl_report.json`.
+
+## How to re-run
+
+1. Open `Canoe Config/Fiasa.cfg` in CANoe 8.5.98 (loads DBs, CDDs, sysvars, VT config).
+2. Open Test Setup → load `Canoe Config/Test_FIASA.tse`.
+3. Start measurement (VT hardware must be present — the init sequence drives `DigTrq*`, `Torque*`, `Position*` channels; see [VT System](./vt-system/)).
+4. Execute the test node; compare against the archived `.xml`/`.html` verdict.
+
+For the test logic itself (torque/position ramps, PWM outputs), read [`Init VT7001.can`](./capl/).

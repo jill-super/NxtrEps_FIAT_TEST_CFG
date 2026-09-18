@@ -1,0 +1,31 @@
+---
+title: VT System (.vtcfg)
+description: Bench hardware modules and channels — power, torque, position, motor loads.
+---
+
+import vt from '../../data/vt_fiasa.json';
+
+The VT System is the programmable hardware between CANoe and the EPS ECU: power supplies, analog/digital stimulus and load channels. Both `Canoe Config/Fiasa.vtcfg` and `Canoe Config/Fiasa_VTsys.vtcfg` are **identical** (`VTSConfiguration version="3"`): **{vt.modules.length} modules, {vt.channelCount} channels, {vt.valueCount} stimulus values**.
+
+## Modules & channels
+
+{vt.modules.map((m, i) => (
+  <details open={i < 2}>
+    <summary><strong>Module {i + 1}</strong> — product <code>{m.productCode}</code>, interface <code>{m.interface}</code>, serial <code>{m.serial}</code> — {m.channelCount} channels, {m.valueCount} values</summary>
+    <ul>
+      {m.channels.map((c) => <li><code>{c.name}</code></li>)}
+    </ul>
+  </details>
+))}
+
+## Channel map (what drives what)
+
+| Channels | Bench function |
+| -------- | -------------- |
+| `Battery`, `Ignition`, `M1_SupInt`, `ExtSupp1`, `ExtSupp2` | Power: ECU supply + ignition (`VTS::Ignition::Active` is also a panel/sysvar touchpoint) |
+| `DigTrq1`, `DigTrq2`, `M38_Ch3`–`M38_Ch10` | Digital torque PWM + auxiliaries (driven by `Init VT7001.can` torque ramp: `gDigTrq1/2_PWMOutputDC`) |
+| `Torque1`, `Torque2`, `M3_Ch3`, `M3_Ch4` | Analog torque sensor stimulus (T1/T2 voltages from the torque model) |
+| `Position1`–`Position4` | Handwheel position sensor stimulus (P1–P4 voltages, NCS offsets) |
+| `Motor1`–`Motor8` / `M42_Ch4` | Motor/power-stage loads |
+
+The CAPL torque/position loops (`Init VT7001.can`, `EPS_VT_SIM_001.CAN`) compute voltages/PWM and write them to these channels; the test setup `Test_FIASA.tse` executes the init sequence. See [CAPL](./capl/) and [Test execution](./test-execution/).

@@ -1,0 +1,58 @@
+---
+title: Repository overview
+description: Every file in this repo — size, format, and what it is for.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import inventory from '../../data/inventory.json';
+import extensions from '../../data/extensions.json';
+
+The repo is a flat bench configuration: six tool folders plus this docs site. No build, no source to compile — the "code" is the Vector configuration itself.
+
+## Directory map
+
+| Directory | What it holds | Key files |
+| --------- | ------------- | --------- |
+| `A2L/` | ASAP2 measurement description + CANape map settings | `Rte_4.00.00.a2l` (422 measurements), `Rte_4.00.00.INI`, `bl.vsysvar` |
+| `CDD/` | CANdela diagnostic descriptions + migration log | `Fiasa_326_327_4.00.00.cdd` (EPS), `DSS.cdd` (bench), migration `.log` |
+| `Canoe Config/` | CANoe config, panels, VT configs, test setups, CANape INI, trace & logs | `Fiasa.cfg`, 4× `.xvp`, 2× `.vtcfg`, 2× `.tse`, `CANape.INI`, `Trace.blf` |
+| `Capl/` | CAPL sources, compiled binaries, test report, trace log | 8× `.can`, 6× `.cbf`, `Init VT7001_report.*`, `traceLog.txt` |
+| `DBC/` | CAN databases + DBC-viewer layout | C-CAN `.dbc` (77 msgs), `DSS.dbc` (4 msgs), `.ini` |
+| `system_variables/` | CANoe system variables | `sys.vsysvar` (52 vars), `SIGNALS.vsysvar` (empty placeholder) |
+| `docs/` | This documentation site (Astro + Starlight) | `astro.config.mjs`, `src/content/docs/`, `src/data/`, `scripts/extract.py` |
+
+## By file type
+
+{Object.entries(extensions).map(([ext, e]) => (
+  <div>
+    <h3><code>{ext}</code> — {e.count} file(s)</h3>
+    <p>{e.about}</p>
+    <ul>
+      {e.files.map((f) => <li><code>{f}</code></li>)}
+    </ul>
+  </div>
+))}
+
+## Full inventory
+
+<TableFilter inputId="inv-search" tableId="inv-table" countId="inv-count" placeholder="Filter by path, folder or extension…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="inv-table">
+<thead><tr><th>Path</th><th>Folder</th><th>Ext</th><th style="text-align:right">Size</th></tr></thead>
+<tbody>
+{inventory.filter((r) => !r.path.startsWith('docs/')).map((r) => (
+  <tr>
+    <td><code class="inline-id">{r.path}</code></td>
+    <td><code>{r.dir}</code></td>
+    <td><code>{r.ext || '—'}</code></td>
+    <td style="text-align:right;white-space:nowrap">{r.size.toLocaleString('en-US')} B</td>
+  </tr>
+))}
+</tbody>
+</table>
+</div>
+
+:::note
+`docs/` itself is excluded from the table above — it is the documentation site, not bench configuration. Sizes are exact at doc-generation time; re-run `python3 scripts/extract.py` from `docs/` after changing bench files.
+:::

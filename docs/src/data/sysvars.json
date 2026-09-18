@@ -1,0 +1,552 @@
+[
+  {
+    "file": "sys.vsysvar",
+    "size": 9451,
+    "variables": [
+      {
+        "namespace": "MESSAGES",
+        "name": "CRC_BSMOff",
+        "full": "MESSAGES::CRC_BSMOff",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "MessageCounter_BSMOff",
+        "full": "MESSAGES::MessageCounter_BSMOff",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC1_AgingCnt",
+        "full": "MESSAGES::NTC1_AgingCnt",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC1_DTCnum",
+        "full": "MESSAGES::NTC1_DTCnum",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC1_Parameter",
+        "full": "MESSAGES::NTC1_Parameter",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC1_StatusByte",
+        "full": "MESSAGES::NTC1_StatusByte",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC2_AgingCnt",
+        "full": "MESSAGES::NTC2_AgingCnt",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC2_DTCnum",
+        "full": "MESSAGES::NTC2_DTCnum",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC2_Parameter",
+        "full": "MESSAGES::NTC2_Parameter",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC2_StatusByte",
+        "full": "MESSAGES::NTC2_StatusByte",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC3_AgingCnt",
+        "full": "MESSAGES::NTC3_AgingCnt",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC3_DTCnum",
+        "full": "MESSAGES::NTC3_DTCnum",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC3_Parameter",
+        "full": "MESSAGES::NTC3_Parameter",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "NTC3_StatusByte",
+        "full": "MESSAGES::NTC3_StatusByte",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlBCM_COMMAND_disable",
+        "full": "MESSAGES::pnlBCM_COMMAND_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlBSM1_disable",
+        "full": "MESSAGES::pnlBSM1_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlMOT1_disable",
+        "full": "MESSAGES::pnlMOT1_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlMOT3_disable",
+        "full": "MESSAGES::pnlMOT3_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlSTATUS_C_BCM2_disable",
+        "full": "MESSAGES::pnlSTATUS_C_BCM2_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "pnlSTATUS_C_IPC_disable",
+        "full": "MESSAGES::pnlSTATUS_C_IPC_disable",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "PWMOutputDC",
+        "full": "MESSAGES::PWMOutputDC",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "ReadSysVar",
+        "full": "MESSAGES::ReadSysVar",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarABSandTCStatus",
+        "full": "MESSAGES::SysVarABSandTCStatus",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarAvgTxRate",
+        "full": "MESSAGES::SysVarAvgTxRate",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarChassisGenStatus1",
+        "full": "MESSAGES::SysVarChassisGenStatus1",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarDataLength",
+        "full": "MESSAGES::SysVarDataLength",
+        "type": "int",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarDrvModeControl",
+        "full": "MESSAGES::SysVarDrvModeControl",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarDrvnWheelGrndVelCE",
+        "full": "MESSAGES::SysVarDrvnWheelGrndVelCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarDrvnWheelGrndVelHS",
+        "full": "MESSAGES::SysVarDrvnWheelGrndVelHS",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarEngCntrlReq",
+        "full": "MESSAGES::SysVarEngCntrlReq",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarEngGenStatus4",
+        "full": "MESSAGES::SysVarEngGenStatus4",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarEngineStatus",
+        "full": "MESSAGES::SysVarEngineStatus",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarLKASteeringTorqueCmdCE",
+        "full": "MESSAGES::SysVarLKASteeringTorqueCmdCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarLKASteeringTorqueCmdHS",
+        "full": "MESSAGES::SysVarLKASteeringTorqueCmdHS",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarMaxTxRate",
+        "full": "MESSAGES::SysVarMaxTxRate",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarMinTxRate",
+        "full": "MESSAGES::SysVarMinTxRate",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarNonDrvnWheel",
+        "full": "MESSAGES::SysVarNonDrvnWheel",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarNonDrvnWheelGrndVelCE",
+        "full": "MESSAGES::SysVarNonDrvnWheelGrndVelCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarNonDrvnWheelGrndVelHS",
+        "full": "MESSAGES::SysVarNonDrvnWheelGrndVelHS",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarParkAssistParallelCE",
+        "full": "MESSAGES::SysVarParkAssistParallelCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarPowerMode",
+        "full": "MESSAGES::SysVarPowerMode",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarSteeringTorqueCmdCE",
+        "full": "MESSAGES::SysVarSteeringTorqueCmdCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarSWA",
+        "full": "MESSAGES::SysVarSWA",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarTransGenStatus",
+        "full": "MESSAGES::SysVarTransGenStatus",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarVehDynESCHybCE",
+        "full": "MESSAGES::SysVarVehDynESCHybCE",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarVehSpd",
+        "full": "MESSAGES::SysVarVehSpd",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarVehStability",
+        "full": "MESSAGES::SysVarVehStability",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarVINDigits10to17",
+        "full": "MESSAGES::SysVarVINDigits10to17",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarVINDigits2to9",
+        "full": "MESSAGES::SysVarVINDigits2to9",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "SysVarWheelPulse",
+        "full": "MESSAGES::SysVarWheelPulse",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      },
+      {
+        "namespace": "MESSAGES",
+        "name": "VarTime",
+        "full": "MESSAGES::VarTime",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": "2000"
+      },
+      {
+        "namespace": "XCPResponse",
+        "name": "ReturnVal",
+        "full": "XCPResponse::ReturnVal",
+        "type": "float",
+        "unit": "",
+        "min": "",
+        "max": "",
+        "start": ""
+      }
+    ],
+    "location": "system_variables/sys.vsysvar"
+  },
+  {
+    "file": "SIGNALS.vsysvar",
+    "size": 70,
+    "variables": [],
+    "location": "system_variables/SIGNALS.vsysvar"
+  },
+  {
+    "file": "bl.vsysvar",
+    "size": 499,
+    "variables": [
+      {
+        "namespace": "_Statistics::CAN1",
+        "name": "CANBusload",
+        "full": "_Statistics::CAN1::CANBusload",
+        "type": "float",
+        "unit": "%",
+        "min": "0",
+        "max": "100",
+        "start": ""
+      }
+    ],
+    "location": "A2L/bl.vsysvar"
+  }
+]

@@ -1,0 +1,74 @@
+---
+title: System variables
+description: All CANoe sysvars — message disables, NTC injection, Tx-rate probes, bus load.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import sysvars from '../../data/sysvars.json';
+
+System variables are the bench's shared knobs: panels write them, CAPL reads them. Three files define them (two live in `system_variables/`, one in `A2L/`):
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>File</th><th>Variables</th><th>Purpose</th></tr></thead>
+<tbody>
+{sysvars.map((g) => (
+  <tr><td><code>{g.location}</code></td><td>{g.variables.length}</td><td>{g.location.includes('sys.') ? 'Main bench sysvars (MESSAGES + XCPResponse)' : g.location.includes('SIGNALS') ? 'Empty placeholder (no variables defined)' : 'Bus-load probe for CAN1'}</td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+## `sys.vsysvar` — the 52 bench variables
+
+Namespaces: `MESSAGES` (51 vars) + `XCPResponse` (1 var, `ReturnVal`).
+
+**Message disable switches** (int, written by panels, read by `BCM.can`/`ECM.can`/`IPC.can` via `on sysvar`):
+
+- `pnlBCM_COMMAND_disable`, `pnlSTATUS_C_BCM2_disable`, `pnlSTATUS_C_IPC_disable`, `pnlBSM1_disable`, `pnlMOT1_disable`, `pnlMOT3_disable`
+
+**CRC / counter fault injection** (read by `BSM.can`):
+
+- `CRC_BSMOff`, `MessageCounter_BSMOff` — set to 1 to freeze CRC / counter updates on `BSM1`
+
+**NTC (diagnostic trouble code) staging** (consumed by test/panel flows):
+
+- `NTC1_AgingCnt`, `NTC1_DTCnum`, `NTC1_Parameter`, `NTC1_StatusByte` (same ×3 for NTC2, NTC3)
+
+**Tx-rate / message-analysis probes** (float, used with `MessageAnalysis.can`):
+
+- `SysVarAvgTxRate`, `SysVarMaxTxRate`, `SysVarMinTxRate`, `SysVarDataLength`, `VarTime` (start value 2000), `ReadSysVar`, `PWMOutputDC`
+
+**Vehicle-state mirrors** (float):
+
+- `SysVarVehSpd`, `SysVarSWA`, `SysVarPowerMode`, `SysVarEngineStatus`, `SysVarEngGenStatus4`, `SysVarEngCntrlReq`, `SysVarTransGenStatus`, `SysVarChassisGenStatus1`, `SysVarABSandTCStatus`, `SysVarVehStability`, `SysVarVehDynESCHybCE`, `SysVarDrvModeControl`, wheel speeds (`SysVarDrvnWheelGrndVelCE/HS`, `SysVarNonDrvnWheel…`, `SysVarWheelPulse`), steering (`SysVarSteeringTorqueCmdCE`, `SysVarLKASteeringTorqueCmdCE/HS`), VIN digits (`SysVarVINDigits2to9`, `SysVarVINDigits10to17`), `SysVarParkAssistParallelCE`
+
+## Searchable list
+
+<TableFilter inputId="sysvar-search" tableId="sysvar-table" countId="sysvar-count" placeholder="Filter variables — try disable, NTC, TxRate, VehSpd…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="sysvar-table">
+<thead><tr><th>Full path</th><th>Type</th><th>Unit</th><th>Min</th><th>Max</th><th>Start</th><th>Defined in</th></tr></thead>
+<tbody>
+{sysvars.flatMap((g) => g.variables.map((v) => (
+  <tr>
+    <td><code class="inline-id">{v.full}</code></td>
+    <td><code>{v.type}</code></td>
+    <td>{v.unit || '—'}</td>
+    <td>{v.min || '—'}</td>
+    <td>{v.max || '—'}</td>
+    <td>{v.start || '—'}</td>
+    <td><code>{g.location}</code></td>
+  </tr>
+)))}
+</tbody>
+</table>
+</div>
+
+## How they connect
+
+- **Panels → sysvars:** `Fiasa326.xvp` checkboxes bind to `MESSAGES::pnl*_disable`, `CRC_BSMOff`, `MessageCounter_BSMOff` (see [Panels](./panels/)).
+- **Sysvars → CAPL:** `on sysvar MESSAGES::…` handlers call `ILDisableMsg` / `ILEnableMsg` (see [CAPL](./capl/)).
+- **`SIGNALS.vsysvar`** is an empty placeholder (`<systemvariables version="4" />`) — reserved for future signal-bound vars.
+- **`A2L/bl.vsysvar`** holds `_Statistics::CAN1::CANBusload` (float, %, 0–100) for bus-load display.

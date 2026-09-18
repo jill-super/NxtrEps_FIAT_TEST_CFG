@@ -1,0 +1,28 @@
+[
+  {
+    "file": "Test_FIASA.tse",
+    "size": 6175,
+    "canoeVersion": "8.5.98 Build 98",
+    "canoeVersionRaw": "|4|8|3|36913 Test_FIASA",
+    "caplSource": [
+      "..\\Capl\\Init VT7001.can"
+    ],
+    "caplBinary": [
+      "..\\Capl\\Init VT7001.cbf"
+    ],
+    "lines": 373
+  },
+  {
+    "file": "Test_FIASA_ver81.tse",
+    "size": 6061,
+    "canoeVersion": "8.5.98 Build 98",
+    "canoeVersionRaw": "|4|6|3|36913 Test_FIASA_ver81",
+    "caplSource": [
+      "..\\Capl\\Init VT7001.can"
+    ],
+    "caplBinary": [
+      "..\\Capl\\Init VT7001.cbf"
+    ],
+    "lines": 373
+  }
+]

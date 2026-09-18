@@ -1,0 +1,149 @@
+{
+  "file": "DSS.dbc",
+  "nodes": [
+    "TSTR",
+    "EPAS"
+  ],
+  "messageCount": 4,
+  "signalCount": 4,
+  "messages": [
+    {
+      "id": 922,
+      "idHex": "0x39a",
+      "name": "EPAS1",
+      "dlc": 2,
+      "tx": "EPAS",
+      "signals": [
+        {
+          "name": "SAS_Angle",
+          "start": 7,
+          "len": 16,
+          "byteOrder": "Motorola",
+          "signed": false,
+          "factor": "0.1",
+          "offset": "-900",
+          "min": "-900",
+          "max": "900",
+          "unit": "deg",
+          "receivers": [
+            "TSTR"
+          ]
+        }
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1056,
+      "idHex": "0x420",
+      "name": "BCM1",
+      "dlc": 8,
+      "tx": "Vector__XXX",
+      "signals": [
+        {
+          "name": "BCM_Key_Sta",
+          "start": 7,
+          "len": 2,
+          "byteOrder": "Motorola",
+          "signed": false,
+          "factor": "1",
+          "offset": "0",
+          "min": "0",
+          "max": "3",
+          "unit": "enum",
+          "receivers": [
+            "EPAS"
+          ]
+        }
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1685,
+      "idHex": "0x695",
+      "name": "XcpMaster",
+      "dlc": 8,
+      "tx": "TSTR",
+      "signals": [
+        {
+          "name": "XcpMaster",
+          "start": 7,
+          "len": 64,
+          "byteOrder": "Motorola",
+          "signed": false,
+          "factor": "1",
+          "offset": "0",
+          "min": "0",
+          "max": "1.8446744074E+019",
+          "unit": "cnt",
+          "receivers": [
+            "EPAS"
+          ]
+        }
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1765,
+      "idHex": "0x6e5",
+      "name": "XcpSlave",
+      "dlc": 8,
+      "tx": "EPAS",
+      "signals": [
+        {
+          "name": "XcpSlave",
+          "start": 7,
+          "len": 64,
+          "byteOrder": "Motorola",
+          "signed": false,
+          "factor": "1",
+          "offset": "0",
+          "min": "0",
+          "max": "1.8446744074E+019",
+          "unit": "cnt",
+          "receivers": [
+            "TSTR"
+          ]
+        }
+      ],
+      "comment": ""
+    }
+  ],
+  "valueDescriptions": [
+    {
+      "id": 1056,
+      "signal": "BCM_Key_Sta",
+      "map": "3 \"Start\" 2 \"On\" 1 \"Acc\" 0 \"Lock\""
+    }
+  ],
+  "valueTables": [
+    {
+      "name": "BCM_Key_Sta_Table",
+      "map": "3 \"Start\" 2 \"On\" 1 \"Acc\" 0 \"Lock\""
+    },
+    {
+      "name": "LV_CAN_N_ERR_Table",
+      "map": "1 \"Fail\" 0 \"OK\""
+    },
+    {
+      "name": "Steering_Torque_V_Table",
+      "map": "1 \"Failed\" 0 \"Not Failed\""
+    },
+    {
+      "name": "EpasFailed_Table",
+      "map": "1 \"Failed\" 0 \"Not Failed\""
+    },
+    {
+      "name": "SAS_Init_Table",
+      "map": "1 \"Initialization Finished\" 0 \"Initialization Not Finished\""
+    },
+    {
+      "name": "SAS_OK_Table",
+      "map": "1 \"Valid\" 0 \"Invalid\""
+    },
+    {
+      "name": "SAS_CAL_Table",
+      "map": "1 \"Calibrated\" 0 \"Not Calibrated\""
+    }
+  ],
+  "commentedSignals": 0
+}

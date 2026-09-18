@@ -1,0 +1,63 @@
+---
+title: CANoe configuration
+description: Fiasa.cfg — networks, databases, diagnostics, nodes, panels and logging.
+---
+
+import cfg from '../../data/canoe_cfg.json';
+
+CANoe is the hub. Everything else in the repo is referenced from **`Canoe Config/Fiasa.cfg`** (CANoe 8.5.98 SP4, 32-bit PRO, {cfg.size.toLocaleString('en-US')} bytes, ~25k lines).
+
+## What the config wires together
+
+| Layer | In this repo | Detail |
+| ----- | ------------ | ------ |
+| CAN networks | `{cfg.networks.join('`, `')}` | `Can2` = DSS/XCP bench bus, `CCAN` = vehicle C-CAN |
+| CAN databases | `P3271_C-CAN …` → `CCAN`, `DSS` | `DBC/DSS.dbc` → `DSS` on Can2, `DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc` → `CCAN` on CCAN |
+| Diagnostics | `CDD/DSS.cdd`, `CDD/Fiasa_326_327_4.00.00.cdd` | Loaded as diagnostic descriptions for the EPS + bench ECUs |
+| System variables | `system_variables/sys.vsysvar` | 52 vars (message disables, NTC injection, Tx-rate probes) |
+| Simulation nodes | `BCM`, `BSM`, `ECM`, `IPC`, VT init | CAPL `.can` sources + compiled `.cbf` in `Capl/` |
+| Panels | `Fiasa326.xvp` (+ trial/old/Panel1) | Operator UI bound to sysvars and signals |
+| Logging | `Trace.blf`, `Logging_PreFilter.blf`, ASC/MDF defaults | Trace window + measurement logging |
+
+:::caution
+`Fiasa.cfg` references siblings with **relative paths** (`..\DBC\…`, `..\CDD\…`, `..\Capl\…`, `..\system_variables\…`). Renaming any top-level folder breaks the configuration on load.
+:::
+
+## Referenced files ({cfg.referencedCount})
+
+These are the `<VFileName …>` entries parsed from `Fiasa.cfg` — i.e. every external file the config pulls in:
+
+<ul>
+{cfg.referencedFiles.filter((f) => f.trim()).slice(0, 40).map((f) => <li><code>{f}</code></li>)}
+</ul>
+
+The two database bindings and the two CDD bindings are the load-bearing ones:
+
+- `..\DBC\DSS.dbc` → network database `DSS`
+- `..\DBC\P3271_C-CAN [07339]_6A_R1_CR1664.dbc` → network database `CCAN`
+- `..\CDD\DSS.cdd` and `..\CDD\Fiasa_326_327_4.00.00.cdd` → diagnostics
+- `..\system_variables\sys.vsysvar` → shared sysvars
+- `Fiasa326.xvp` → default panel
+
+## Simulation nodes in the config
+
+The Simulation Setup references these CAPL units (source + compiled pair where both exist):
+
+<ul>
+{cfg.caplNodes.map((n) => <li><code>Capl/{n}</code></li>)}
+</ul>
+
+Each node stubs or drives one ECU (`BCM`, `BSM`, `ECM`, `IPC`) or the VT hardware init. See [CAPL](./capl/) for what each node actually does, and [Test execution](./test-execution/) for the `.tse` test nodes.
+
+## Also in `Canoe Config/`
+
+| File | What it is |
+| ---- | ---------- |
+| `Fiasa.vtcfg` / `Fiasa_VTsys.vtcfg` | VT System hardware config (identical, 37 channels) → [VT System](./vt-system/) |
+| `Fiasa326.xvp`, `trialpanel.xvp`, `FiasaOld.xvp`, `Panel1.xvp` | Operator panels → [Panels](./panels/) |
+| `Test_FIASA.tse`, `Test_FIASA_ver81.tse` | Test setups running `Init VT7001.can` → [Test execution](./test-execution/) |
+| `CANape.INI` | CANape global/measurement options → [File formats](./file-formats/) |
+| `Trace.blf` (2.8 MB) | Binary CAN trace recording → [Traces & logs](./traces-logs/) |
+| `traceLog.txt` (0 B) | Empty placeholder log |
+| `DumpStartWrite.log` / `FaultHistory.log` | ASAP2-viewer timestamps (both `2015-03-19 11:45:48`) |
+| `CANapeFault.dmp` (77 KB) | CANape crash dump (`MDMP` magic) — open in Windows debugger, not documented inline |

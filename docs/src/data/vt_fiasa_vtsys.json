@@ -1,0 +1,172 @@
+{
+  "file": "Fiasa_VTsys.vtcfg",
+  "modules": [
+    {
+      "productCode": "1b5901",
+      "interface": "3",
+      "serial": "fe",
+      "channels": [
+        {
+          "name": "Battery"
+        },
+        {
+          "name": "Ignition"
+        },
+        {
+          "name": "M1_SupInt"
+        },
+        {
+          "name": "ExtSupp1"
+        },
+        {
+          "name": "ExtSupp2"
+        }
+      ],
+      "channelCount": 5,
+      "valueCount": 93
+    },
+    {
+      "productCode": "9d401",
+      "interface": "2",
+      "serial": "e1",
+      "channels": [
+        {
+          "name": "DigTrq1"
+        },
+        {
+          "name": "DigTrq2"
+        },
+        {
+          "name": "M38_Ch3"
+        },
+        {
+          "name": "M38_Ch4"
+        },
+        {
+          "name": "M38_Ch5"
+        },
+        {
+          "name": "M38_Ch6"
+        },
+        {
+          "name": "M38_Ch7"
+        },
+        {
+          "name": "M38_Ch8"
+        },
+        {
+          "name": "M38_Ch9"
+        },
+        {
+          "name": "M38_Ch10"
+        },
+        {
+          "name": "M38_Ch11"
+        },
+        {
+          "name": "M38_Ch12"
+        },
+        {
+          "name": "M38_Ch13"
+        },
+        {
+          "name": "M38_Ch14"
+        },
+        {
+          "name": "M38_Ch15"
+        },
+        {
+          "name": "M38_Ch16"
+        }
+      ],
+      "channelCount": 16,
+      "valueCount": 457
+    },
+    {
+      "productCode": "7d401",
+      "interface": "7",
+      "serial": "106",
+      "channels": [
+        {
+          "name": "Torque1"
+        },
+        {
+          "name": "Torque2"
+        },
+        {
+          "name": "M3_Ch3"
+        },
+        {
+          "name": "M3_Ch4"
+        }
+      ],
+      "channelCount": 4,
+      "valueCount": 145
+    },
+    {
+      "productCode": "7d401",
+      "interface": "7",
+      "serial": "150",
+      "channels": [
+        {
+          "name": "Position1"
+        },
+        {
+          "name": "Position2"
+        },
+        {
+          "name": "Position3"
+        },
+        {
+          "name": "Position4"
+        }
+      ],
+      "channelCount": 4,
+      "valueCount": 145
+    },
+    {
+      "productCode": "7d401",
+      "interface": "7",
+      "serial": "151",
+      "channels": [
+        {
+          "name": "Motor1"
+        },
+        {
+          "name": "Motor2"
+        },
+        {
+          "name": "Motor3"
+        },
+        {
+          "name": "Motor4"
+        }
+      ],
+      "channelCount": 4,
+      "valueCount": 145
+    },
+    {
+      "productCode": "7d401",
+      "interface": "7",
+      "serial": "14f",
+      "channels": [
+        {
+          "name": "Motor5"
+        },
+        {
+          "name": "Motor6"
+        },
+        {
+          "name": "Motor7"
+        },
+        {
+          "name": "M42_Ch4"
+        }
+      ],
+      "channelCount": 4,
+      "valueCount": 145
+    }
+  ],
+  "channelCount": 37,
+  "valueCount": 1130
+}

@@ -1,0 +1,42 @@
+---
+title: File-format guide
+description: What every extension in this repo means, how to open it, and where it is documented.
+---
+
+Every file in the repo, grouped by format. For the searchable data behind each format, follow the links to the explorer pages.
+
+## Vector bench formats
+
+| Ext | Format | Open with | In this repo | Explored in |
+| --- | ------ | --------- | ------------ | ----------- |
+| `.dbc` | CAN database (Vector DBC, ASCII) | CANoe, CANdb++ | `DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc` (77 msgs / 595 sigs), `DBC/DSS.dbc` (4 msgs) | [DBC](./dbc/) |
+| `.cdd` | CANdela diagnostic description (XML, DTD 7.5.2101 → 8.2.106) | CANoe Diagnostics, CANdelaStudio | `CDD/Fiasa_326_327_4.00.00.cdd` (263 svcs), `CDD/DSS.cdd` (19 svcs) | [CDD](./cdd/) |
+| `.a2l` | ASAP2 measurement description v1.60 (ASCII) | CANape, ASAP2 Studio | `A2L/Rte_4.00.00.a2l` (422 measurements, CANape 11) | [A2L](./a2l/) |
+| `.can` / `.CAN` | CAPL source (ASCII, `windows-1252`) | CANoe CAPL editor / browser | 8 sources in `Capl/` (stubs, VT sim, XCP tests) | [CAPL](./capl/) |
+| `.cbf` | Compiled CAPL branch (binary, `CAPL` magic) | CANoe (Simulation Setup) | 6 binaries in `Capl/` — read the same-named `.can` | [CAPL](./capl/) |
+| `.cfg` | CANoe configuration (proprietary text, ~25k lines) | CANoe 8.5.98 SP4 | `Canoe Config/Fiasa.cfg` — networks, DBs, nodes | [CANoe config](./canoe-config/) |
+| `.vtcfg` | VT System config (XML, `VTSConfiguration v3`) | VT System Config | `Fiasa.vtcfg` = `Fiasa_VTsys.vtcfg` (6 mods / 37 ch) | [VT System](./vt-system/) |
+| `.xvp` | CANoe panel (XML serialization) | CANoe panel editor | 4 panels (3–83 controls) | [Panels](./panels/) |
+| `.tse` | CANoe test setup/environment (proprietary text) | CANoe Test Setup | `Test_FIASA.tse`, `Test_FIASA_ver81.tse` | [Test execution](./test-execution/) |
+| `.vsysvar` | System variables (XML, `systemvariables v4`) | CANoe | `sys.vsysvar` (52), `SIGNALS.vsysvar` (empty), `bl.vsysvar` (bus load) | [System variables](./system-variables/) |
+| `.blf` | Binary Logging Format (binary, `LOGG` magic) | CANoe, vSignalyzer | `Canoe Config/Trace.blf` (2.8 MB) | [Traces & logs](./traces-logs/) |
+
+## Tool / report formats
+
+| Ext | Format | In this repo |
+| --- | ------ | ------------ |
+| `.INI` | Tool settings (Windows INI) | `Canoe Config/CANape.INI` (CANape global options), `A2L/Rte_4.00.00.INI` (map template), `DBC/….ini` (viewer column layout) |
+| `.log` | Plain-text tool logs | `CDD/Load_migration_….log` (CANdela upgrade), `DumpStartWrite.log` + `FaultHistory.log` (ASAP2-viewer timestamps) |
+| `.txt` | Plain-text logs | `Capl/traceLog.txt` (308-line diagnostic trace), `Canoe Config/traceLog.txt` (empty) |
+| `.xml` | Test report (machine-readable) | `Capl/Init VT7001_report.xml` (pass, 2016-03-21) |
+| `.html` | Test report (rendered) | `Capl/Init VT7001_report.html` — open in a browser |
+| `.dmp` | Crash dump (binary, `MDMP` magic) | `Canoe Config/CANapeFault.dmp` (77 KB) — Windows-debugger only |
+
+## Which file do I open first?
+
+1. New to the bench → `Canoe Config/Fiasa.cfg` ([CANoe config](./canoe-config/)).
+2. Need a message/signal → [DBC explorer](./dbc/).
+3. Need a diagnostic service → [CDD](./cdd/).
+4. Need a measurement → [A2L](./a2l/).
+5. Need bench behavior → [CAPL](./capl/).
+6. Need the operator UI → [Panels](./panels/).

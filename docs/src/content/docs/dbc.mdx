@@ -1,0 +1,127 @@
+---
+title: DBC — CAN database
+description: Every message and signal on C-CAN and the DSS bench bus, searchable.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import ccan from '../../data/dbc_ccan.json';
+import dss from '../../data/dbc_dss.json';
+
+Two databases, two buses:
+
+- **C-CAN** — `DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc`: the vehicle bus. **{ccan.messageCount} messages, {ccan.signalCount} signals**, ECUs `{ccan.nodes.join(', ')}`. Bound in `Fiasa.cfg` as database `CCAN` on network `CCAN`.
+- **DSS bench bus** — `DBC/DSS.dbc`: minimal support DB for XCP/test. **{dss.messageCount} messages**, ECUs `{dss.nodes.join(', ')}`. Bound as `DSS` on `Can2`.
+
+The `.ini` next to the C-CAN db (`P3271_C-CAN [07339]_6A_R1_CR1664.ini`, 165 lines) only stores DBC-viewer column layouts (`View_Nodes`, `View_Messages`, `View_Signals`, …) — no bus semantics.
+
+## ECUs on C-CAN
+
+| ECU | Role in this bench |
+| --- | ------------------ |
+| `BCM` | Body control — transmits `BCM_COMMAND`, `BATTERY_INFO`, `STATUS_C_BCM1/2` |
+| `BSM` | Brake system — transmits `BSM1/2`, `BSM_YRS_DATA`, `WHEEL_*`, `STATUS_BSM` |
+| `ECM` | Engine — transmits `MOT1–4`, `MOT_TRANSMISSION`, `STATUS_ECM` |
+| `EPS` | **The unit under test** — transmits `GE`, `XcpSlave`/`GliwaSlave`, diag responses |
+| `IPC` | Cluster — transmits `STATUS_C_IPC`, `TIME_DATE` |
+| `MTA` | Transmission — transmits `TRANSMISSION1/2`, `SELMOT3`, `STATUS_TRANSMISSION` |
+| `ORC` | Occupant restraint — transmits `ORC_YRS_DATA`, `IMPACT_INFO`, `STATUS_ORC` |
+| `PAM` | Park assist — transmits `PARK_INFO`, `STATUS_PAM` |
+| `DIAG_TEST` | Tester node — transmits `XcpMaster`/`GliwaMaster` + all `DIAGNOSTIC_REQUEST_*` |
+
+## Message explorer (C-CAN, 77 messages)
+
+<TableFilter inputId="dbc-msg-search" tableId="dbc-msg-table" countId="dbc-msg-count" placeholder="Filter messages — try BSM1, DIAGNOSTIC, MOT…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="dbc-msg-table">
+<thead><tr><th>ID (dec)</th><th>ID (hex)</th><th>Message</th><th>DLC</th><th>Tx</th><th>Signals</th></tr></thead>
+<tbody>
+{ccan.messages.map((m) => (
+  <tr>
+    <td><code class="inline-id">{m.id}</code></td>
+    <td><code class="inline-id">{m.idHex}</code></td>
+    <td><strong>{m.name}</strong></td>
+    <td>{m.dlc}</td>
+    <td><code>{m.tx}</code></td>
+    <td>{m.signals.length}</td>
+  </tr>
+))}
+</tbody>
+</table>
+</div>
+
+## Signal explorer (C-CAN, {ccan.signalCount} signals)
+
+<TableFilter inputId="dbc-sig-search" tableId="dbc-sig-table" countId="dbc-sig-count" placeholder="Filter signals — try CRC, Torque, Speed, FailSts…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="dbc-sig-table">
+<thead><tr><th>Message</th><th>Signal</th><th>Bits</th><th>Endian</th><th>Signed</th><th>Factor / Offset</th><th>Range</th><th>Unit</th><th>Rx</th></tr></thead>
+<tbody>
+{ccan.messages.flatMap((m) => m.signals.map((s) => (
+  <tr>
+    <td><code class="inline-id">{m.name}</code></td>
+    <td><strong>{s.name}</strong></td>
+    <td><code>{s.start}|{s.len}</code></td>
+    <td>{s.byteOrder}</td>
+    <td>{s.signed ? 'signed' : 'unsigned'}</td>
+    <td><code>{s.factor} , {s.offset}</code></td>
+    <td><code>{s.min} … {s.max}</code></td>
+    <td>{s.unit || '—'}</td>
+    <td><code>{s.receivers.join(' ') || '—'}</code></td>
+  </tr>
+)))}
+</tbody>
+</table>
+</div>
+
+:::tip
+Bit notation is `start|length` as stored in the DBC (`SG_ name : start|len@byteorder`). `Motorola` = big-endian (`@0`), `Intel` = little-endian (`@1`). Physical value = raw × factor + offset.
+:::
+
+## Value tables
+
+The C-CAN database uses inline `VAL_` enumerations ({ccan.valueDescriptions.length} signals
+with decoded states, no standalone `VAL_TABLE_` blocks). The DSS bench database is the
+opposite: 7 named `VAL_TABLE_` lookup tables plus 1 inline `VAL_` entry. Examples:
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>Scope</th><th>Table / signal</th><th>Mapping (excerpt)</th></tr></thead>
+<tbody>
+{dss.valueTables.slice(0, 7).map((t) => (
+  <tr><td><code>DSS</code></td><td><code>{t.name}</code></td><td><code>{t.map.slice(0, 90)}</code></td></tr>
+))}
+{ccan.valueDescriptions.slice(0, 5).map((v) => (
+  <tr><td><code>C-CAN</code></td><td><code>{v.signal}</code> (ID <code>{v.id}</code>)</td><td><code>{v.map.slice(0, 90)}</code></td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+Full decoded maps are in `docs/src/data/dbc_ccan.json` (`valueDescriptions`) and
+`docs/src/data/dbc_dss.json` (`valueTables`, `valueDescriptions`).
+
+## DSS bench database (4 messages)
+
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>ID</th><th>Message</th><th>DLC</th><th>Tx</th><th>Signals</th></tr></thead>
+<tbody>
+{dss.messages.map((m) => (
+  <tr><td><code>{m.id}</code></td><td><strong>{m.name}</strong></td><td>{m.dlc}</td><td><code>{m.tx}</code></td><td>{m.signals.map((s) => <code>{s.name} </code>)}</td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+`BCM1/BCM_Key_Sta` is cyclic (200 ms, `GenMsgSendType` = cyclicAndSpontaneous); `EPAS1/SAS_Angle` is 10 ms cyclic with factor 0.1, offset −900, range ±900 deg. These two drive the DSS-side panel bindings.
+
+## How to read a DBC line
+
+```
+BO_ 242 BSM1: 8 BSM
+ SG_ CRC_B1 : 7|8@0+ (1,0) [0|255] ""  Vector__XXX
+```
+
+`BO_` = message (ID 242, name `BSM1`, 8 bytes, sent by `BSM`). `SG_` = signal (`CRC_B1`, starts at bit 7, 8 bits, Motorola, unsigned, factor 1, offset 0). The CAPL `BSM.can` node computes exactly this CRC and the message counter — see [CAPL](./capl/).

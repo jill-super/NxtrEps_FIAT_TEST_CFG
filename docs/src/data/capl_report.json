@@ -1,0 +1,143 @@
+{
+  "file": "Init VT7001_report.xml",
+  "root": {
+    "tag": "testmodule",
+    "attrib": {
+      "starttime": "2016-03-21 09:20:10",
+      "timestamp": "   0.000000",
+      "verdicts": "2_basic"
+    }
+  },
+  "setup": [
+    {
+      "name": "Windows Login Name",
+      "desc": "PZ00M4"
+    },
+    {
+      "name": "Version",
+      "desc": "CANoe.LIN.XCP 8.5.98 (SP4)"
+    },
+    {
+      "name": "Configuration",
+      "desc": "C:\\FIASA\\FIASA_testconfig_8.5\\Canoe Config\\Fiasa.cfg"
+    },
+    {
+      "name": "Configuration Comment",
+      "desc": ""
+    },
+    {
+      "name": "Test Module Name",
+      "desc": "Init VT7001"
+    },
+    {
+      "name": "Test Module File",
+      "desc": "C:\\FIASA\\FIASA_testconfig_8.5\\Capl\\Init VT7001.can"
+    },
+    {
+      "name": "Last modification of Test Module File",
+      "desc": "2014-11-07, 10:56:46"
+    },
+    {
+      "name": "Windows Computer Name",
+      "desc": "SAGL9H2QM12"
+    },
+    {
+      "name": "Nodelayer Module CANoeILNLVector",
+      "desc": "CANoe Interaction Layer NL (Vector) Version 3.16.19 (Sep 15 2015 09:49:09) , C:\\Program Files (x86)\\Vector CANoe 8.5\\Exec32\\CANoeILNLVector.dll"
+    },
+    {
+      "name": "Nodelayer Module osek_tp",
+      "desc": "OSEK_TP (VC10, Version 5.28.55, Build 55), C:\\Program Files (x86)\\Vector CANoe 8.5\\Exec32\\osek_tp.dll"
+    },
+    {
+      "name": "Nodelayer Module CANOEILNLDEFAULT",
+      "desc": "CANoe Interaction Layer NL (Default) Version 3.16.19 (Sep 15 2015 09:26:50) , C:\\Program Files (x86)\\Vector CANoe 8.5\\Exec32\\CANOEILNLDEFAULT.DLL"
+    },
+    {
+      "name": "Channel",
+      "desc": "1"
+    },
+    {
+      "name": "Device",
+      "desc": "VN1640"
+    },
+    {
+      "name": "Serial number",
+      "desc": "3390"
+    },
+    {
+      "name": "Driver DLL version",
+      "desc": "9.3.24"
+    },
+    {
+      "name": "Driver version",
+      "desc": "9.3.24"
+    },
+    {
+      "name": "Channel",
+      "desc": "2"
+    },
+    {
+      "name": "Device",
+      "desc": "VN1640"
+    },
+    {
+      "name": "Serial number",
+      "desc": "3390"
+    },
+    {
+      "name": "Driver DLL version",
+      "desc": "9.3.24"
+    }
+  ],
+  "testcases": [],
+  "children": [
+    {
+      "tag": "verdict",
+      "attrib": {
+        "time": "2016-03-21 09:20:11",
+        "timestamp": "   0.600000",
+        "endtime": "2016-03-21 09:20:11",
+        "endtimestamp": "   0.600000",
+        "result": "pass"
+      },
+      "text": ""
+    },
+    {
+      "tag": "title",
+      "attrib": {},
+      "text": "Init VT7001"
+    },
+    {
+      "tag": "testlogfiles",
+      "attrib": {},
+      "text": ""
+    },
+    {
+      "tag": "engineer",
+      "attrib": {},
+      "text": ""
+    },
+    {
+      "tag": "testsetup",
+      "attrib": {},
+      "text": ""
+    },
+    {
+      "tag": "hardware",
+      "attrib": {
+        "name": "CAN Channel Interfaces",
+        "category": "CategoryCANIF"
+      },
+      "text": ""
+    },
+    {
+      "tag": "hardware",
+      "attrib": {
+        "name": "VT-System",
+        "category": "vtsystem"
+      },
+      "text": ""
+    }
+  ]
+}

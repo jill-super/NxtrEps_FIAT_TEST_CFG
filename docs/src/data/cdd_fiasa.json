@@ -1,0 +1,3226 @@
+{
+  "file": "Fiasa_326_327_4.00.00.cdd",
+  "size": 2438447,
+  "dtd": "7.5.2101",
+  "manufacturer": "fiat",
+  "languages": "(en-US,it)",
+  "ecus": [
+    {
+      "id": "_08156068",
+      "name": "Nexteer – Electric Power Steering – P3272-P341 – Next Gen A"
+    }
+  ],
+  "diagClasses": [
+    {
+      "name": "Diagnostic Session Control",
+      "qual": "Session",
+      "instances": [
+        {
+          "name": "Default",
+          "qual": "Default",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Default Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Programming",
+          "qual": "Programming",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Programming Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ExtendedDiagnostic",
+          "qual": "ExtendedDiagnostic",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "ExtendedDiagnostic Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "NexteerManufacturingServices",
+          "qual": "NexteerManufacturingServices",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "NexteerManufacturingServices Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "VehicleManufacturerEndOfLine",
+          "qual": "VehicleManufacturerEndOfLine",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "VehicleManufacturerEndOfLine Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecu Reset",
+      "qual": "EcuReset",
+      "instances": [
+        {
+          "name": "HardReset",
+          "qual": "HardReset",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "HardReset Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "KeyOffOnReset",
+          "qual": "KeyOffOnReset",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "KeyOffOnReset Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "SoftReset",
+          "qual": "SoftReset",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "SoftReset Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "EnableRapidPowerShutDown",
+          "qual": "EnableRapidPowerShutDown",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "EnableRapidPowerShutDown Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DisableRapidPowerShutDown",
+          "qual": "DisableRapidPowerShutDown",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "DisableRapidPowerShutDown Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Security Access",
+      "qual": "SecurityAccess",
+      "instances": [
+        {
+          "name": "DownLoadRequestSeed",
+          "qual": "Level1Seed",
+          "services": [
+            {
+              "name": "Request Seed",
+              "qual": "Request",
+              "shortcut": "DownLoadRequestSeed Request Seed",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DownLoadSendKey",
+          "qual": "Level1Key",
+          "services": [
+            {
+              "name": "Send Key",
+              "qual": "Send",
+              "shortcut": "DownLoadSendKey Send Key",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Anti-Theft / Key Programming Seed",
+          "qual": "Anti_Theft_Key_Programming_Seed",
+          "services": [
+            {
+              "name": "Request Seed",
+              "qual": "Request",
+              "shortcut": "Anti-Theft / Key Programming Seed Request Seed",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Anti-Theft / Key Programming Key",
+          "qual": "Anti_Theft_Key_Programming_Key",
+          "services": [
+            {
+              "name": "Send Key",
+              "qual": "Send",
+              "shortcut": "Anti-Theft / Key Programming Key Send Key",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Protected Engineering Access Seed",
+          "qual": "Protected_Engineering_Access_Seed",
+          "services": [
+            {
+              "name": "Request Seed",
+              "qual": "Request",
+              "shortcut": "Protected Engineering Access Seed Request Seed",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Protected Engineering Access Key",
+          "qual": "Protected_Engineering_Access_Key",
+          "services": [
+            {
+              "name": "Send Key",
+              "qual": "Send",
+              "shortcut": "Protected Engineering Access Key Send Key",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Special Functions Seed",
+          "qual": "Special_Functions_Seed",
+          "services": [
+            {
+              "name": "Request Seed",
+              "qual": "Request",
+              "shortcut": "Special Functions Seed Request Seed",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Special Functions Key",
+          "qual": "Special_Functions_Key",
+          "services": [
+            {
+              "name": "Send Key",
+              "qual": "Send",
+              "shortcut": "Special Functions Key Send Key",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication Control",
+      "qual": "CommCtrl",
+      "instances": [
+        {
+          "name": "EnableRxAndEnableTx",
+          "qual": "EnableRxAndEnableTx",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "EnableRxAndEnableTx Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "EnableRxAndDisableTx",
+          "qual": "EnableRxAndDisableTx",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "EnableRxAndDisableTx Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DisableRxAndEnableTx",
+          "qual": "DisableRxAndEnableTx",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "DisableRxAndEnableTx Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DisableRxAndDisableTx",
+          "qual": "DisableRxAndDisableTx",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "DisableRxAndDisableTx Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Control DTC Setting",
+      "qual": "CtrlDtcSetting",
+      "instances": [
+        {
+          "name": "On",
+          "qual": "DtcSettingOn",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "On Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Off",
+          "qual": "DtcSettingOff",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Ctrl",
+              "shortcut": "Off Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Engineering Parameters",
+      "qual": "EngineeringParameters",
+      "instances": [
+        {
+          "name": "VIN Odometer",
+          "qual": "VIN_Odometer",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "VIN Odometer Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Session Control Disabled",
+          "qual": "Session_Control_Disabled",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Session Control Disabled  Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Session Control Disabled  Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Roe Activation State",
+          "qual": "Roe_Activation_State_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Roe Activation State Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Roe Activation State Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Steering Angle Sensor",
+          "qual": "Steering_Angle_Sensor",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Steering Angle Sensor Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Tuning Table",
+          "qual": "Tuning_Table",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Tuning Table Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "System Status",
+          "qual": "System_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "System Status Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Driver Torque",
+          "qual": "Driver_Torque",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Driver Torque Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DriveStyleSts Switch",
+          "qual": "DriveStyleSts_Switch",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "DriveStyleSts Switch Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Temperature ECU",
+          "qual": "Temperature_ECU",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Temperature ECU Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Engine Speed",
+          "qual": "Engine_Speed",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Engine Speed Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Speed",
+          "qual": "Vehicle_Speed",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Speed Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Battery Voltage",
+          "qual": "Battery_Voltage",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Battery Voltage Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Control Module Voltage",
+          "qual": "Control_Module_Voltage",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Control Module Voltage Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Life Time",
+          "qual": "ECU_time_stamps_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Life Time Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Time since Ignition ON",
+          "qual": "ECU_Time_since_Ignition_ON",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Time since Ignition ON Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Check EOL Configuration Data",
+          "qual": "Check_EOL_Configuration_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Check EOL Configuration Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Analog to Digital Converter (ADC) Battery",
+          "qual": "ADC_Battery_Voltage_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Analog to Digital Converter (ADC) Battery Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ADC Control Module Voltage",
+          "qual": "ADC_Control_Module_Voltage",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ADC Control Module Voltage Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Time of Power Latch",
+          "qual": "Time_of_Power_Latch",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Time of Power Latch Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Operational Mode Status",
+          "qual": "Operational_Mode_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Operational Mode Status  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer High Resolution",
+          "qual": "Odometer_High_Resolution",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer High Resolution Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer",
+          "qual": "Odometer",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer content at last Flash programming",
+          "qual": "Odometer_content_at_last_Flash_programming",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer content at last Flash programming Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Programming attempt counter",
+          "qual": "Programming_attempt_counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Programming attempt counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Number of out of revolution events",
+          "qual": "Number_of_out_of_revolution_events",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Number of out of revolution events Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Maximum Engine Speed Reached",
+          "qual": "Maximum_Engine_Speed_Reached",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Maximum Engine Speed Reached Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Maximum engine speed exceeding time counter",
+          "qual": "Maximum_engine_speed_exceeding_time_counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Maximum engine speed exceeding time counter  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer value overspeed recognitions",
+          "qual": "Odometer_value_overspeed_recognitions",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer value overspeed recognitions  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Life Time (Not Volatile Memory)",
+          "qual": "ECU_Life_Time_Not_Volatile_Memory",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Life Time (Not Volatile Memory)  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Ignition On counter",
+          "qual": "Ignition_On_counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Ignition On counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Time First DTC Detection",
+          "qual": "Time_First_DTC_Detection",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Time First DTC Detection Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Time since Ignition on of first DTC detection",
+          "qual": "Time_since_Ignition_on_of_first_DTC_detection",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Time since Ignition on of first DTC detection Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer Last Clear Data Trouble Code (DTC)",
+          "qual": "Odometer_Last_Clear_DTC_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer Last Clear Data Trouble Code (DTC) Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Programming Status",
+          "qual": "Programming_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Programming Status Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Distance Travelled While MIL is Activated",
+          "qual": "Distance_Travelled_While_MIL_is_Activated",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Distance Travelled While MIL is Activated Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Response on Event Activation State",
+          "qual": "Response_on_Event_Activation_State",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Response on Event Activation State Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "VIN LOCK State",
+          "qual": "VIN_LOCK_State",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "VIN LOCK State Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Erase Routine Status",
+          "qual": "Erase_Routine_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Erase Routine Status  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Distance Travelled While High Coolant Temperature Indication is Activated",
+          "qual": "Distance_Travelled_While_High_Coolant_Temperature_Indication_is_Activated",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Distance Travelled While High Coolant Temperature Indication is Activated Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Number of oil life reset procedure",
+          "qual": "Number_of_oil_life_reset_procedure",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Number of oil life reset procedure  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer of oil life reset procedure",
+          "qual": "Odometer_of_oil_life_reset_procedure",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer of oil life reset procedure  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Current total value of remaining engine oil expressed as distance",
+          "qual": "Current_total_value_of_remaining_engine_oil_expressed_as_distanc",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Current total value of remaining engine oil expressed as distance  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Odometer value at the starting of a change oil required indication",
+          "qual": "Odometer_value_at_the_starting_of_a_change_oil_required_indicati",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Odometer value at the starting of a change oil required indication  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Wake Up Reasons Recording",
+          "qual": "Wake_Up_Reasons_Recording",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Wake Up Reasons Recording Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "CIS : Code Identification Chassis",
+          "qual": "C_I_S_Codice_Identificativo_scocca",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "CIS : Code Identification Chassis Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "CIS : Code Identification Chassis Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Aging counter",
+          "qual": "Aging_counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Aging counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Cycle To Switch Warning Indication OFF",
+          "qual": "Cycle_To_Switch_Warning_Indication_OFF",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Cycle To Switch Warning Indication OFF Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Frequency Counter",
+          "qual": "Frequency_Counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Frequency Counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Active Diagnostic Session Data Identifier",
+          "qual": "Active_Diagnostic_Session_Data_Identifier",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Active Diagnostic Session Data Identifier Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Identification",
+      "qual": "Ident",
+      "instances": [
+        {
+          "name": "Supplier ECU Serial Number",
+          "qual": "Supplier_ECU_Serial_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier ECU Serial Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic Identification",
+          "qual": "Diagnostic_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Diagnostic Identification",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Qualification",
+          "qual": "ECU_Qualification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Qualification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic Specification Information",
+          "qual": "Diagnostic_Specification_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Diagnostic Specification Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Hardware Supplier Identification",
+          "qual": "Hardware_Supplier_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Hardware Supplier Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Software Supplier Identification",
+          "qual": "Software_Supplier_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Software Supplier Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Identification",
+          "qual": "Vehicle_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Identification",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Boot Software Version Information",
+          "qual": "Boot_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Boot Software Version Information  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Data Software Version Information",
+          "qual": "Application_Data_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Data Software Version Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Software Version Information",
+          "qual": "Application_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Software Version Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Spare Part Number",
+          "qual": "ECU_Spare_Part_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU spare part number",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "ECU Spare Part Number Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Manufacturer ECU Software Number",
+          "qual": "Vehicle_Manufacturer_ECU_Software_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Manufacturer ECUSoftware Number",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Serial Number",
+          "qual": "ECU_Serial_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Serial Number Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "ECU Serial Number Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "VIN Original",
+          "qual": "VIN_Original",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "VIN Original Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Manufacturer ECU Hardware Number",
+          "qual": "Vehicle_Manufacturer_ECU_Hardware_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Manufacturer ECUHardware Number",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Hardware Part Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Part_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Hardware Part Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Hardware Version Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Version_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Hardware Version Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Software Part Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Version_Number_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Software Part Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Software Version Number",
+          "qual": "Supplier_Manufacturer_ECU_Software_Version_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Software Version Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Exhaust Regulation or Type Approval Number (EROTAN)",
+          "qual": "Exhaust_Regulation_or_Type_Approval_Number_EROTAN",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Exhaust Regulation or Type Approval Number (EROTAN) Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "System Identification Data",
+          "qual": "System_Identification_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "System Identification Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vector Delivery ID",
+          "qual": "Vector_Delivery_ID",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vector Delivery ID Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Algorithm ID Number – Access Mode",
+          "qual": "Algorithm_ID_Number_Access_Mode",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Algorithm ID Number – Access Mode Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Algorithm ID Number - Reprogramming",
+          "qual": "Algorithm_ID_Number_Reprogramming",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Algorithm ID Number - Reprogramming Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Message Matrix",
+          "qual": "Message_Matrix",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Message Matrix  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "VIN Current",
+          "qual": "VIN_Current",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "VIN Current Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "VIN Current Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Identification Fingerprint",
+      "qual": "Identification_Fingerprint",
+      "instances": [
+        {
+          "name": "Boot Software Fingerprint Information",
+          "qual": "Application_Software_Fingerprint_Information_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Boot Software Fingerprint Information Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Boot Software Fingerprint Information Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Software Fingerprint Information",
+          "qual": "Application_Software_Fingerprint_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Software Fingerprint Information Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Application Software Fingerprint Information Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Data Software Fingerprint Information",
+          "qual": "Application_Data_Software_Fingerprint_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Data Software Fingerprint Information Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Application Data Software Fingerprint Information Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Variant Coding",
+      "qual": "VarCoding",
+      "instances": [
+        {
+          "name": "PROXI Data",
+          "qual": "PROXI_Data",
+          "services": [
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "PROXI Data Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Read ECU PROXI Data",
+          "qual": "Read_ECU_PROXI_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Read ECU PROXI Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "CONFIGURATION CHECK FAIL Counter",
+          "qual": "CONFIGURATION_CHECK_FAIL_Counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "CONFIGURATION CHECK FAIL Counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "PROXI WRITE COUNTER",
+          "qual": "PROXI_WRITE_COUNTER",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "PROXI WRITE COUNTER  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic Data Snapshot",
+          "qual": "Diagnostic_Data_Snapshot",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Diagnostic Data Snapshot  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "EOL Status",
+          "qual": "EOL_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "EOL Status  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Check Configuration Fail Snapshot",
+          "qual": "Check_Configuration_Fail_Snapshot",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Check Configuration Fail Snapshot Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IO-Control",
+      "qual": "IOCtrl",
+      "instances": [
+        {
+          "name": "CITY User Disabled/Enabled Indication",
+          "qual": "EBD_Safety_lamp_1",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "CITY User Disabled/Enabled Indication Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Reset To Default",
+              "qual": "Reset",
+              "shortcut": "CITY User Disabled/Enabled Indication Reset To Default",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "CITY User Disabled/Enabled Indication Return Control",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Configuration Reset",
+          "qual": "Configuration_Reset",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "Configuration Reset Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "Configuration Reset Return Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Defeat Engine ON",
+          "qual": "Defeat_Engine_ON",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "Defeat Engine ON Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Reset To Default",
+              "qual": "Reset",
+              "shortcut": "Defeat Engine ON Reset To Default",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "Defeat Engine ON Return Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routine Control",
+      "qual": "RoutineCtrl",
+      "instances": [
+        {
+          "name": "Original VIN Unlock",
+          "qual": "Original_VIN_Unlock",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Original VIN Unlock Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Steering Angle Calibration",
+          "qual": "Steering_Angle_Calibration",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Steering Angle Calibration Start",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Request Results",
+              "qual": "ReqResults",
+              "shortcut": "Steering Angle Calibration Request Results",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Original VIN Lock",
+          "qual": "Original_VIN_Lock",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Original VIN Lock Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Logical Block Hash",
+          "qual": "Logical_Block_Hash",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Logical Block Hash Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Disable Fail-Safe reaction",
+          "qual": "Disable_Fail_Safe_reaction",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Disable Fail-Safe reaction Start",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "Disable Fail-Safe reaction Stop",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Check Programming Preconditions",
+          "qual": "Check_Programming_Preconditions",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Check Programming Preconditions Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Check Program - Without Additional 32 Bit CRC And Without Additional Signature",
+          "qual": "Check_Program_Check_Routine_Without_Additional_CRC_And_Without_A_1",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Check Program - Without Additional 32 Bit CRC And Without Additional Signature Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Erase Memory",
+          "qual": "Erase_Memory",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Erase Memory Start",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Request Results",
+              "qual": "ReqResults",
+              "shortcut": "Erase Memory Request Results",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "checkProgrammingDependencies - Without Additional 32 Bit CRC And Without Additional Signature",
+          "qual": "checkProgrammingDependencies_Without_Additional_32_Bit_CRC_And_W_1",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "checkProgrammingDependencies - Without Additional 32 Bit CRC And Without Additional Signature Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Diagnostic Session Control",
+      "qual": "Session",
+      "instances": []
+    },
+    {
+      "name": "Ecu Reset",
+      "qual": "EcuReset",
+      "instances": [
+        {
+          "name": "NexteerReset",
+          "qual": "NexteerReset",
+          "services": [
+            {
+              "name": "Reset",
+              "qual": "Reset",
+              "shortcut": "NexteerReset Reset",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Security Access",
+      "qual": "SecurityAccess",
+      "instances": []
+    },
+    {
+      "name": "Communication Control",
+      "qual": "CommCtrl",
+      "instances": []
+    },
+    {
+      "name": "Control DTC Setting",
+      "qual": "CtrlDtcSetting",
+      "instances": []
+    },
+    {
+      "name": "Engineering Parameters",
+      "qual": "EngineeringParameters",
+      "instances": [
+        {
+          "name": "System Status",
+          "qual": "System_Status",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "System Status Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Steering Angle Sensor",
+          "qual": "Steering_Angle_Sensor",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Steering Angle Sensor Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Tuning Table",
+          "qual": "Tuning_Table",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Tuning Table Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Driver Torque",
+          "qual": "Driver_Torque",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Driver Torque Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "DriveStyleSts Switch",
+          "qual": "DriveStyleSts_Switch",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "DriveStyleSts Switch Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Temperature ECU",
+          "qual": "Temperature_ECU",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Temperature ECU Read",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Identification",
+      "qual": "Ident",
+      "instances": [
+        {
+          "name": "Tuning Set Select",
+          "qual": "Tuning_Set_Select",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Tuning Set Select Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Tuning Set Select Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Manufacturer ECU Software Number",
+          "qual": "Vehicle_Manufacturer_ECU_Software_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Manufacturer ECU Software Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Spare Part Number",
+          "qual": "ECU_Spare_Part_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Spare Part Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Data Software Version Information",
+          "qual": "Application_Data_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Data Software Version Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Application Software Version Information",
+          "qual": "Application_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Application Software Version Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Boot Software Version Information",
+          "qual": "Boot_Software_Version_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Boot Software Version Information  Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Identification",
+          "qual": "Vehicle_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Software Supplier Identification",
+          "qual": "Software_Supplier_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Software Supplier Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Hardware Supplier Identification",
+          "qual": "Hardware_Supplier_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Hardware Supplier Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic Specification Information",
+          "qual": "Diagnostic_Specification_Information",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Diagnostic Specification Information Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Qualification",
+          "qual": "ECU_Qualification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Qualification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Diagnostic Identification",
+          "qual": "Diagnostic_Identification",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Diagnostic Identification Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F18A - systemSupplierIdentifierDataIdentifier",
+          "qual": "F18A_systemSupplierIdentifierDataIdentifier",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "F18A - systemSupplierIdentifierDataIdentifier Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "F18A - systemSupplierIdentifierDataIdentifier Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Algorithm ID Number – Access Mode",
+          "qual": "Algorithm_ID_Number_Access_Mode",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Algorithm ID Number – Access Mode Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vector Delivery ID",
+          "qual": "Vector_Delivery_ID",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vector Delivery ID Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "System Identification Data",
+          "qual": "System_Identification_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "System Identification Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "ECU Serial Number",
+          "qual": "ECU_Serial_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "ECU Serial Number Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "ECU Serial Number Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Hardware Part Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Part_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Hardware Part Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Manufacturer ECU Hardware Number",
+          "qual": "Vehicle_Manufacturer_ECU_Hardware_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Vehicle Manufacturer ECU Hardware Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Hardware Version Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Version_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Hardware Version Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD01- Internal Software Identifiers",
+          "qual": "FD01_Internal_Software_Identifiers",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD01- Internal Software Identifiers Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD02 - Serial Communication Service Active (Defeats)",
+          "qual": "FD02_Serial_Communication_Service_Active_Defeats",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD02 - Serial Communication Service Active (Defeats) Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD02 - Serial Communication Service Active (Defeats) Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD03 - EOL Position Sensor",
+          "qual": "FD03_EOL_Position_Sensor",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD03 - EOL Position Sensor Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD03 - EOL Position Sensor Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD07 - End of Line Polarity",
+          "qual": "FD07_End_of_Line_Polarity",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD07 - End of Line Polarity Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD07 - End of Line Polarity Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD0E - Motor Stiffness Check",
+          "qual": "FD0E_Motor_Stiffness_Check",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD0E - Motor Stiffness Check Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD10 - Nexteer CCP/XCP - Transmit and Receive IDs",
+          "qual": "FD10_Nexteer_CCP_XCP_Transmit_and_Receive_IDs",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD10 - Nexteer CCP/XCP - Transmit and Receive IDs Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD12 - Current Mode Offset and Gain",
+          "qual": "FD12_Current_Mode_Offset_and_Gain",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD12 - Current Mode Offset and Gain Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD12 - Current Mode Offset and Gain Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD13 - Read Nexteer DTCs",
+          "qual": "FD13_Read_Nexteer_DTCs",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD13 - Read Nexteer DTCs Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD14 - Nexteer Turns Counter",
+          "qual": "Nexteer_FD13_Read_Nexteer_DTCs_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD14 - Nexteer Turns Counter Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD17 - TMS570 Flash Memory Size",
+          "qual": "FD17_TMS570_Flash_Memory_Size",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD17 - TMS570 Flash Memory Size Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD19 - Nexteer Manufacturing Enable Counter (MEC)",
+          "qual": "FD19_Nexteer_Manufacturing_Enable_Counter_MEC",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD19 - Nexteer Manufacturing Enable Counter (MEC) Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD19 - Nexteer Manufacturing Enable Counter (MEC) Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD1A - System state",
+          "qual": "FD1A_System_state",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD1A - System state Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD1B - Manual Vehicle speed Overide",
+          "qual": "FD1B_Manual_Vehicle_speed_Overide",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD1B - Manual Vehicle speed Overide Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD1B - Manual Vehicle speed Overide Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD1C - Manufacturing Services Version",
+          "qual": "FD1C_Manufacturing_Services_Version",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD1C - Manufacturing Services Version Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD1E - Torque Sensor Diagnostic Defeat",
+          "qual": "FD1E_Torque_Sensor_Diagnostic_Defeat",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD1E - Torque Sensor Diagnostic Defeat Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD1E - Torque Sensor Diagnostic Defeat Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD20 - Read Transient Overvoltage Data",
+          "qual": "FD20_Read_Transient_Overvoltage_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD20 - Read Transient Overvoltage Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD21 - Vehicle Tuning Select",
+          "qual": "FD21_Vehicle_Tuning_Select",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD21 - Vehicle Tuning Select Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD21 - Vehicle Tuning Select Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD23 - Turns Counter Energy Mode",
+          "qual": "FD23_Turns_Counter_Energy_Mode",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD23 - Turns Counter Energy Mode Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD23 - Turns Counter Energy Mode Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD25 - Motor Torque Scale Factor",
+          "qual": "FD25_Motor_Torque_Scale_Factor",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD25 - Motor Torque Scale Factor Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD25 - Motor Torque Scale Factor Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD26 - Average Friction Learning Select",
+          "qual": "FD26_Average_Friction_Learning_Select",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD26 - Average Friction Learning Select Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD26 - Average Friction Learning Select Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD27 - Friction Offset Output Defeat",
+          "qual": "FD27_Friction_Offset_Output_Defeat",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD27 - Friction Offset Output Defeat Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD27 - Friction Offset Output Defeat Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD29 - Set EOL Friction Learned",
+          "qual": "FD29_Set_EOL_Friction_Learned",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD29 - Set EOL Friction Learned Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD29 - Set EOL Friction Learned Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD30 - End of Line Torque Trim Value - Digital SENT",
+          "qual": "FD30_End_of_Line_Torque_Trim_Value_Digital_SENT",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD30 - End of Line Torque Trim Value - Digital SENT Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FD30 - End of Line Torque Trim Value - Digital SENT Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD31 - Torque Sensor Value - Digital SENT",
+          "qual": "FD31_Torque_Sensor_Value_Digital_SENT",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FD31 - Torque Sensor Value - Digital SENT Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDA1 - ECU Serial Number",
+          "qual": "FDA1_ECU_Serial_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDA1 - ECU Serial Number Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDA1 - ECU Serial Number Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDA2 - EPS Serial Number",
+          "qual": "FDA2_EPS_Serial_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDA2 - EPS Serial Number Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDA2 - EPS Serial Number Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDA3 - ECU Hardware Part Number",
+          "qual": "FDA3_ECU_Hardware_Part_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDA3 - ECU Hardware Part Number Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDA3 - ECU Hardware Part Number Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDAC - Nexteer Manufacturing Scratchpad",
+          "qual": "FDAC_Nexteer_Manufacturing_Scratchpad",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDAC - Nexteer Manufacturing Scratchpad Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDAC - Nexteer Manufacturing Scratchpad Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDAD - Active Pull Compensation",
+          "qual": "FDAD_Active_Pull_Compensation",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDAD - Active Pull Compensation Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDAE - Ignition Counter",
+          "qual": "FDAE_Ignition_Counter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDAE - Ignition Counter Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDAE - Ignition Counter Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDAF - NTC Snapshot Data",
+          "qual": "FDAF_NTC_Snapshot_Data",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDAF - NTC Snapshot Data Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB0 - IPM Cogging Table 1",
+          "qual": "FDB0_IPM_Cogging_Table_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB0 - IPM Cogging Table 1 Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB0 - IPM Cogging Table 1 Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB1 - IPM Cogging Table 2",
+          "qual": "FDB1_IPM_Cogging_Table_2",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB1 - IPM Cogging Table 2 Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB1 - IPM Cogging Table 2 Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB2 - IPM Cogging Table 3",
+          "qual": "FDB2_IPM_Cogging_Table_3",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB2 - IPM Cogging Table 3 Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB2 - IPM Cogging Table 3 Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB3 - IPM Cogging Table 4",
+          "qual": "FDB3_IPM_Cogging_Table_4",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB3 - IPM Cogging Table 4 Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB3 - IPM Cogging Table 4 Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB4 - Current Mode Analog Ke R Ld Lq",
+          "qual": "FDB4_Current_Mode_Analog_Ke_R_Ld_Lq",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB4 - Current Mode Analog Ke R Ld Lq Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB4 - Current Mode Analog Ke R Ld Lq Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB5 -  Active Pull Set Short Term Comp",
+          "qual": "FDB5_Active_Pull_Set_Short_Term_Comp",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB5 -  Active Pull Set Short Term Comp Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB5 -  Active Pull Set Short Term Comp Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB6 -  Active Pull Set LongTerm Comp",
+          "qual": "FDB6_Active_Pull_Set_LongTerm_Comp",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB6 -  Active Pull Set LongTerm Comp Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB6 -  Active Pull Set LongTerm Comp Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FDB7 - IPM Cogging Table 5",
+          "qual": "FDB7_IPM_Cogging_Table_5",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "FDB7 - IPM Cogging Table 5 Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "FDB7 - IPM Cogging Table 5 Write",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Software Part Number",
+          "qual": "Supplier_Manufacturer_ECU_Hardware_Version_Number_1",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Software Part Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supplier Manufacturer ECU Software Version Number",
+          "qual": "Supplier_Manufacturer_ECU_Software_Version_Number",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Supplier Manufacturer ECU Software Version Number Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Identification Fingerprint",
+      "qual": "Identification_Fingerprint",
+      "instances": []
+    },
+    {
+      "name": "Variant Coding",
+      "qual": "VarCoding",
+      "instances": []
+    },
+    {
+      "name": "IO-Control",
+      "qual": "IOCtrl",
+      "instances": [
+        {
+          "name": "FD0D - Motor Torque Command I/O Control",
+          "qual": "Nexteer_FD0D_Motor_Torque_Command_I_O_Control_1",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "FD0D - Motor Torque Command I/O Control Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "ReturnControl",
+              "qual": "ReturnControl",
+              "shortcut": "FD0D - Motor Torque Command I/O Control ReturnControl",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FD11 - Assist Gain Command I/O Control",
+          "qual": "FD11_Assist_Gain_Command_I_O_Control",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "FD11 - Assist Gain Command I/O Control Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "ReturnControl",
+              "qual": "ReturnControl",
+              "shortcut": "FD11 - Assist Gain Command I/O Control ReturnControl",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "CITY User Disabled/Enabled Indication",
+          "qual": "EBD_Safety_lamp_1",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "CITY User Disabled/Enabled Indication Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Reset To Default",
+              "qual": "Reset",
+              "shortcut": "CITY User Disabled/Enabled Indication Reset To Default",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "CITY User Disabled/Enabled Indication Return Control",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Configuration Reset",
+          "qual": "Configuration_Reset",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "Configuration Reset Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "Configuration Reset Return Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Defeat Engine ON",
+          "qual": "Defeat_Engine_ON",
+          "services": [
+            {
+              "name": "Control",
+              "qual": "Control",
+              "shortcut": "Defeat Engine ON Control",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Reset To Default",
+              "qual": "Reset",
+              "shortcut": "Defeat Engine ON Reset To Default",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Return Control",
+              "qual": "ReturnControl",
+              "shortcut": "Defeat Engine ON Return Control",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routine Control",
+      "qual": "RoutineCtrl",
+      "instances": [
+        {
+          "name": "F000 - Manufacturing Variables Reset",
+          "qual": "F000_Manufacturing_Variables_Reset",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F000 - Manufacturing Variables Reset Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F001 - Clear Diagnostic Trouble Code (NTC/CTC)",
+          "qual": "F001_Clear_Diagnostic_Trouble_Code_NTC_CTC",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F001 - Clear Diagnostic Trouble Code (NTC/CTC) Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F003 - Position Sensor EOLCalibration",
+          "qual": "F003_Position_Sensor_EOLCalibration",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F003 - Position Sensor EOLCalibration Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F004 - Torque Sensor End Of Line Calibration (Digital)",
+          "qual": "F004_Torque_Sensor_End_Of_Line_Calibration_Digital",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F004 - Torque Sensor End Of Line Calibration (Digital) Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F005 - DTC Status By Number",
+          "qual": "F005_DTC_Status_By_Number",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F005 - DTC Status By Number Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F008 - Current Mode - Current Gain Calc",
+          "qual": "F008_Current_Mode_Current_Gain_Calc",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F008 - Current Mode - Current Gain Calc Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F009 - Current Mode - Current Offset Calc",
+          "qual": "F009_Current_Mode_Current_Offset_Calc",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F009 - Current Mode - Current Offset Calc Start",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "F009 - Current Mode - Current Offset Calc Stop",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Request Results",
+              "qual": "ReqResults",
+              "shortcut": "F009 - Current Mode - Current Offset Calc Request Results",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "F0FF - MPU Test Interface",
+          "qual": "F0FF_MPU_Test_Interface",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "F0FF - MPU Test Interface Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Steering Angle Calibraiton",
+          "qual": "Steering_Angle_Calibraiton",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Steering Angle Calibraiton Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FEE0 - Turns Counter Position EOL Calibration",
+          "qual": "FEE0_Turns_Counter_Position_EOL_Calibration",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "FEE0 - Turns Counter Position EOL Calibration Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Original VIN Lock",
+          "qual": "Original_VIN_Lock",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Original VIN Lock Start",
+              "func": "0",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Disable Fail-Safe reaction",
+          "qual": "Disable_Fail_Safe_reaction",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Disable Fail-Safe reaction Start",
+              "func": "0",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "Disable Fail-Safe reaction Stop",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "diagClasses": 22,
+    "diagInstances": 206,
+    "services": 263,
+    "dataObjects": 1163,
+    "dtcs": 144,
+    "envvars": 0
+  }
+}

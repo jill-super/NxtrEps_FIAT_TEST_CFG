@@ -1,0 +1,46 @@
+---
+title: Traces & logs
+description: BLF trace, diagnostic traceLog, migration log, fault logs and the CAPL test report.
+---
+
+import TableFilter from '../../components/TableFilter.astro';
+import logs from '../../data/logs.json';
+import tracelog from '../../data/tracelog_capl.json';
+
+Recordings and logs are the bench's memory. Binary recordings (`.blf`) are parsed by Vector tools; text logs are fully browsable below.
+
+## File inventory
+
+| File | Size | What it is |
+| ---- | ---- | ---------- |
+| `Canoe Config/Trace.blf` | 2.8 MB, magic `LOGG` | Binary CAN recording (CANoe log). Open in CANoe Trace / vSignalyzer. Contains `LOBJ` compressed objects — not text-decodable here. |
+| `Capl/traceLog.txt` | 15.8 KB, 307 lines | Diagnostic session trace vs the Nexteer EPS (DID reads, NRCs). Fully listed below. |
+| `CDD/Load_migration_….log` | 48.8 KB, 574 lines | CANdela 7.5.2101 → 8.2.106 migration record. See [CDD](./cdd/). |
+| `Capl/Init VT7001_report.xml` + `.html` | 7.9 KB + 24 KB | `Init VT7001` test verdicts (`pass`, 2016-03-21). See [Test execution](./test-execution/). |
+| `Canoe Config/CANapeFault.dmp` | 77 KB, magic `MDMP` | CANape crash minidump (GenuineIntel). Debugger-only. |
+| `Canoe Config/DumpStartWrite.log`, `FaultHistory.log` | 74 B each | Same stamp: `2015-03-19 11:45:48 Vector ASAP2 Viewer 12.0.40.50928` |
+| `Canoe Config/traceLog.txt` | 0 B | Empty placeholder |
+
+## `Capl/traceLog.txt` — diagnostic session ({tracelog.lines} lines)
+
+A CANape/CANdela-style trace against `Nexteer_Electric_Power_Steering_P3272_P341_Next_Gen_A_1`: Tx DID reads, Rx positive/negative responses with decoded system-status bits. Representative lines:
+
+- `[15:41:55] - Tx 22 0A DA …` → `Negative response: Incorrect message length or invalid format`
+- `[15:42:09] - Rx 62 0A DA 08 …` → positive response, `System status 0x08` with per-bit decode (`DST Status NOT requested`, `Operative Conditions Not passed`, …)
+
+<TableFilter inputId="trace-search" tableId="trace-table" countId="trace-count" placeholder="Filter trace lines — try Negative, Positive, 0A DA, Status…" />
+
+<div class="data-table-wrap">
+<table class="data-table" id="trace-table">
+<thead><tr><th>#</th><th>Line</th></tr></thead>
+<tbody>
+{tracelog.all.map((line, i) => (
+  <tr><td>{i + 1}</td><td><code style="white-space:pre-wrap">{line || ' '}</code></td></tr>
+))}
+</tbody>
+</table>
+</div>
+
+## `Trace.blf` notes
+
+`LOGG` magic, zlib-compressed `LOBJ` containers (standard Vector BLF). To inspect: CANoe → Measurement → Trace window → open `Trace.blf`, with the C-CAN + DSS databases loaded so IDs decode to the [DBC](./dbc/) names. To re-record: check the logging blocks in `Fiasa.cfg` (`VLogCfgData`, `Logging_PreFilter.blf`, ASC/MDF export paths).

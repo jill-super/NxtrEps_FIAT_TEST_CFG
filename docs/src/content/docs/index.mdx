@@ -1,0 +1,86 @@
+---
+title: FIASA Test Configuration
+description: Interactive docs for the FIASA CANoe test setup — buses, ECUs, diagnostics, calibration and panels.
+template: splash
+hero:
+  tagline: Interactive documentation for the Vector CANoe test bench behind this repo — every DBC message, CDD service, A2L measurement, CAPL node and panel, searchable in one place.
+  actions:
+    - text: Get started
+      link: ./getting-started/
+      icon: right-arrow
+    - text: Browse the repo
+      link: ./repo-overview/
+      icon: open-book
+      variant: secondary
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import ccan from '../../data/dbc_ccan.json';
+import dss from '../../data/dbc_dss.json';
+import fiasa from '../../data/cdd_fiasa.json';
+import dssCdd from '../../data/cdd_dss.json';
+import a2l from '../../data/a2l.json';
+import capl from '../../data/capl.json';
+import sysvars from '../../data/sysvars.json';
+import vt from '../../data/vt_fiasa.json';
+
+<div class="hero-grid">
+  <div class="stat-card"><b>{ccan.messageCount} + {dss.messageCount}</b><span>CAN messages (C-CAN db + DSS bench db)</span></div>
+  <div class="stat-card"><b>{ccan.signalCount}</b><span>signals in the C-CAN database</span></div>
+  <div class="stat-card"><b>{fiasa.counts.services} + {dssCdd.counts.services}</b><span>diagnostic services (FIASA CDD + DSS CDD)</span></div>
+  <div class="stat-card"><b>{a2l.measurementCount}</b><span>A2L measurements (RTE 4.00.00)</span></div>
+  <div class="stat-card"><b>{capl.filter((f) => f.source).length} + {capl.filter((f) => f.binary).length}</b><span>CAPL sources + compiled binaries</span></div>
+  <div class="stat-card"><b>{sysvars.reduce((n, g) => n + g.variables.length, 0)}</b><span>system variables + {vt.channelCount} VT channels</span></div>
+</div>
+
+## What is this repo?
+
+This repository is the **test configuration for the FIASA electric power steering (EPS) program** (Fiat / Nexteer, P3271 / P3272 platforms). It is not application code — it is the complete Vector-tooling setup used to **simulate the vehicle, stimulate the EPS ECU, run diagnostics (CDD), measure/calibrate via XCP (A2L), and operate the bench from CANoe panels**:
+
+- **CANoe 8.5.98** configuration (`Canoe Config/Fiasa.cfg`) wiring everything together: two CAN databases, two CDD files, system variables, CAPL simulation nodes, VT hardware, trace windows and logging.
+- **C-CAN database** (`DBC/P3271_C-CAN [07339]_6A_R1_CR1664.dbc`, {ccan.messageCount} messages / {ccan.signalCount} signals, {ccan.nodes.length} ECUs) plus a small **DSS bench database** (`DBC/DSS.dbc`, {dss.messageCount} messages) for XCP/test support.
+- **Diagnostics** (`CDD/Fiasa_326_327_4.00.00.cdd` — Nexteer EPS, {fiasa.counts.diagClasses} classes / {fiasa.counts.diagInstances} instances / {fiasa.counts.services} services; `CDD/DSS.cdd` — bench/manufacturing services).
+- **Measurement & calibration** (`A2L/Rte_4.00.00.a2l` — {a2l.measurementCount} RTE measurements, ASAP2 v1.60, written by CANape 11).
+- **Simulation & test logic** (`Capl/*.can` source + `*.cbf` binaries: BCM/BSM/ECM/IPC stubs, VT7001 init, EPS torque/position simulation, message-rate analysis, XCP/DLC tests).
+- **Operator panels** (`Canoe Config/*.xvp` — Fiasa326, trialpanel, FiasaOld, Panel1) and **VT System** (`*.vtcfg` — 6 modules / 37 channels for power, torque, position, motor loads).
+- **System variables** (`system_variables/sys.vsysvar` — 52 vars: message disables, NTC injection, Tx-rate probes; `A2L/bl.vsysvar` — bus-load probe).
+
+<CardGrid>
+  <LinkCard title="CANoe configuration" description="Fiasa.cfg — open this first; networks, DBs, nodes" href="./canoe-config/" />
+  <LinkCard title="DBC — CAN database" description="C-CAN messages, searchable signal table" href="./dbc/" />
+  <LinkCard title="CDD — Diagnostics" description="Sessions, services, DIDs, migration log" href="./cdd/" />
+  <LinkCard title="A2L — Calibration" description="Measurements, groups, record layouts" href="./a2l/" />
+  <LinkCard title="CAPL — Nodes" description="What each .can/.cbf does, handlers, source" href="./capl/" />
+  <LinkCard title="System variables" description="Vars that drive panels & CAPL" href="./system-variables/" />
+  <LinkCard title="Panels" description="Operator panels, controls & bindings" href="./panels/" />
+  <LinkCard title="VT System" description="Hardware channels for bench I/O" href="./vt-system/" />
+</CardGrid>
+
+## How to use these docs
+
+<CardGrid>
+  <Card title="New to this bench?" icon="rocket">
+    Start with [Getting started](./getting-started/) — required tools, how to open the config, and the bring-up order (VT → CANoe → XCP → panels).
+  </Card>
+  <Card title="Looking for a signal or message?" icon="magnifier">
+    Use the [DBC explorer](./dbc/) — every message and signal is in a filterable table with ID, DLC, transmitter, layout and units.
+  </Card>
+  <Card title="Debugging diagnostics?" icon="wrench">
+    The [CDD page](./cdd/) lists every diagnostic class/instance/service plus the CANdela migration log.
+  </Card>
+  <Card title="What does each file do?" icon="document">
+    The [file-format guide](./file-formats/) explains all 17 extensions in this repo, and [Traces &amp; logs](./traces-logs/) covers BLF, text logs and the CAPL test report.
+  </Card>
+</CardGrid>
+
+## Tool versions pinned by this repo
+
+| Tool | Version in repo | Evidence |
+| ---- | --------------- | -------- |
+| CANoe | **8.5.98 SP4, 32-bit PRO** | `Fiasa.cfg`, `*.tse`, `*.xvp` headers |
+| VT System config | v3 (`VTSConfiguration version="3"`) | `Fiasa.vtcfg` |
+| CANdela (CDD) | file **7.5.2101**, migrated to **8.2.106** | migration `.log` |
+| CANape / ASAP2 | A2L written by **CANape 11.0.0**, ASAP2 **v1.60** | `Rte_4.00.00.a2l` header |
+| CAPL report | CANoe.LIN.XCP 8.5.98, 2016-03-21 | `Init VT7001_report.xml` |
+
+> **Note on binaries:** `.cbf` (compiled CAPL), `.blf` (trace), `.dmp` (crash dump) cannot be read as text. These docs explain what each one is, which source/config produced it, and how to open it — and parse everything around it.

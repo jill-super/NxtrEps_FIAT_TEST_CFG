@@ -1,0 +1,240 @@
+{
+  "file": "DSS.cdd",
+  "size": 491915,
+  "dtd": "7.0.100",
+  "manufacturer": "Vector",
+  "languages": "(en-US)",
+  "ecus": [
+    {
+      "id": "_03516E38",
+      "name": "Nexteer Common Manufacturing Services"
+    }
+  ],
+  "diagClasses": [
+    {
+      "name": "Sessions",
+      "qual": "Sessions",
+      "instances": [
+        {
+          "name": "Default Session",
+          "qual": "DefaultSession",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Default Session Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Programming Session",
+          "qual": "ProgrammingSession",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Programming Session Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Extended Diagnostic Session",
+          "qual": "ExtendedDiagnosticSession",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "Extended Diagnostic Session Start",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stored Data",
+      "qual": "Stored_Data",
+      "instances": [
+        {
+          "name": "Nexteer: 5000 - Gear Ratio Parameter",
+          "qual": "Nexteer_5000_Gear_Ratio_Parameter",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Nexteer: 5000 - Gear Ratio Parameter Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Nexteer: 5000 - Gear Ratio Parameter Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Nexteer: 5003 - System Mechanical Polarity",
+          "qual": "Nexteer_5003_System_Mechanical_Polarity",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Nexteer: 5003 - System Mechanical Polarity Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Nexteer: 5003 - System Mechanical Polarity Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ECU Identification",
+      "qual": "ECU_Identification",
+      "instances": [
+        {
+          "name": "Nexteer 5002 - Ring Spur Design",
+          "qual": "Nexteer_5002_Ring_Spur_Design",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Nexteer 5002 - Ring Spur Design Read",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Write",
+              "qual": "Write",
+              "shortcut": "Nexteer 5002 - Ring Spur Design Write",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "Nexteer: 5001 - DSS Software ID",
+          "qual": "Nexteer_5001_DSS_Software_ID",
+          "services": [
+            {
+              "name": "Read",
+              "qual": "Read",
+              "shortcut": "Nexteer: 5001 - DSS Software ID Read",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routine Control",
+      "qual": "Routine_Control",
+      "instances": [
+        {
+          "name": "FE01 - Variable Waveform",
+          "qual": "FE01_Variable_Waveform",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "FE01 - Variable Waveform Start",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "FE01 - Variable Waveform Stop",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Results",
+              "qual": "Results",
+              "shortcut": "FE01 - Variable Waveform Results",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FE02 - Linear Ramp",
+          "qual": "FE02_Linear_Ramp",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "FE02 - Linear Ramp Start",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "FE02 - Linear Ramp Stop",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Results",
+              "qual": "Results",
+              "shortcut": "FE02 - Linear Ramp Results",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        },
+        {
+          "name": "FE03 - Fault Injection",
+          "qual": "FE03_Fault_Injection",
+          "services": [
+            {
+              "name": "Start",
+              "qual": "Start",
+              "shortcut": "FE03 - Fault Injection Start",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Stop",
+              "qual": "Stop",
+              "shortcut": "FE03 - Fault Injection Stop",
+              "func": "1",
+              "phys": "1"
+            },
+            {
+              "name": "Results",
+              "qual": "Results",
+              "shortcut": "FE03 - Fault Injection Results",
+              "func": "1",
+              "phys": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "diagClasses": 4,
+    "diagInstances": 10,
+    "services": 19,
+    "dataObjects": 121,
+    "dtcs": 240,
+    "envvars": 0
+  }
+}
